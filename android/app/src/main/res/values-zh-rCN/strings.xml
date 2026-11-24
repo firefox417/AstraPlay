@@ -469,4 +469,5 @@
     <string name="touch_controls_reset_layout">重置布局</string>
 
     <string name="confirm_exit_app">确定要退出 AstraPlay 吗？</string>
+    <string name="action_exit_app">退出应用</string>
 </resources>
