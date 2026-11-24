@@ -402,9 +402,9 @@ class MainActivity : AppCompatActivity()
 	private fun showExitConfirmation()
 	{
 		alertDialogBuilder()
-			.setMessage("Exit app?")
-			.setPositiveButton("Exit") { _, _ -> finish() }
-			.setNegativeButton("Cancel", null)
+			.setMessage(R.string.confirm_exit_app)
+			.setPositiveButton(R.string.action_quit_session) { _, _ -> finish() }
+			.setNegativeButton(R.string.action_cancel, null)
 			.show()
 	}
 
