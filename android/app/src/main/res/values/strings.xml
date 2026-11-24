@@ -454,4 +454,6 @@
     <string name="touch_controls_done_editing">Done</string>
     <string name="touch_controls_reset_layout">Reset Layout</string>
 
+    <string name="confirm_exit_app">Are you sure you want to exit AstraPlay?</string>
+    <string name="action_exit_app">Exit</string>
 </resources>
