@@ -221,6 +221,9 @@ class Settings : public QObject
 	QMap<QString, QString> GetPlaceboValues();
 	QString GetSettingsFilePath() const;
 
+		QString GetInterfaceLanguage() const { return settings.value("settings/interface_language", "system").toString(); }
+		void SetInterfaceLanguage(const QString &language) { settings.setValue("settings/interface_language", language); }
+
 		ChiakiDisableAudioVideo GetAudioVideoDisabled() const       { return static_cast<ChiakiDisableAudioVideo>(settings.value("settings/audio_video_disabled", 0).toInt()); }
 		void SetAudioVideoDisabled(ChiakiDisableAudioVideo disabled) { settings.setValue("settings/audio_video_disabled", disabled); }
 
