@@ -58,7 +58,7 @@ struct HostCardView: View {
 
             HStack {
                 // Console name
-                Text(host.name ?? "Unknown Console")
+                Text(host.name ?? NSLocalizedString("Unknown Console", comment: "Fallback console name"))
                     .font(.system(size: 22, weight: .bold))
                     .foregroundColor(.white)
                     .lineLimit(1)
