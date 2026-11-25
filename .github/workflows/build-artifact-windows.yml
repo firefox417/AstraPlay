@@ -3,6 +3,16 @@
 name: Build Windows (artifact)
 
 on:
+  push:
+    branches:
+      - Chinese
+    paths:
+      - "gui/**"
+      - "lib/**"
+      - "third-party/**"
+      - "scripts/**"
+      - "CMakeLists.txt"
+      - ".github/workflows/build-artifact-windows.yml"
   workflow_dispatch:
     inputs:
       arch:
