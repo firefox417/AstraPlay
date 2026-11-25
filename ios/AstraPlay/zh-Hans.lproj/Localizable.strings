@@ -336,4 +336,3 @@
 "%@ registered successfully!" = "%@ 注册成功！";
 "Failed to start session (error %@)" = "启动会话失败（错误 %@）";
 "Registration session ended without result" = "注册会话结束，但未收到结果";
-"No consoles added yet.\nEnable Discovery to automatically find consoles on your local network." = "尚未添加主机。\n启用主机发现以自动查找本地网络中的主机。";
