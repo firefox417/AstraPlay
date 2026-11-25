@@ -35,7 +35,7 @@
                     android:layout_weight="1"
                     android:layout_height="34dp"
                     android:gravity="center_vertical"
-                    android:text="All games"
+                    android:text="@string/main_cloud_all_games"
                     android:textSize="13sp"
                     android:textColor="#FFFFFF"
                     android:fontFamily="sans-serif-medium"
@@ -60,7 +60,7 @@
                         android:layout_height="32dp"
                         android:src="@drawable/ic_filter"
                         android:background="@drawable/secondary_header_button_bg"
-                        android:contentDescription="Filter"
+                        android:contentDescription="@string/main_cloud_filter"
                         android:scaleType="centerInside"
                         android:focusable="true"
                         android:padding="4dp" />
@@ -72,7 +72,7 @@
                         android:layout_height="32dp"
                         android:src="@android:drawable/ic_menu_search"
                         android:background="@drawable/secondary_header_button_bg"
-                        android:contentDescription="Search"
+                        android:contentDescription="@string/main_cloud_search"
                         android:scaleType="centerInside"
                         android:focusable="true"
                         android:padding="4dp" />
@@ -84,7 +84,7 @@
                         android:layout_height="32dp"
                         android:src="@drawable/ic_star_outline"
                         android:background="@drawable/secondary_header_button_bg"
-                        android:contentDescription="Favorites"
+                        android:contentDescription="@string/main_cloud_favorites"
                         android:scaleType="centerInside"
                         android:focusable="true"
 
@@ -97,7 +97,7 @@
                         android:layout_height="32dp"
                         android:src="@drawable/ic_sort"
                         android:background="@drawable/secondary_header_button_bg"
-                        android:contentDescription="Sort"
+                        android:contentDescription="@string/main_cloud_sort"
                         android:scaleType="centerInside"
                         android:focusable="true"
 
@@ -110,7 +110,7 @@
                         android:layout_height="32dp"
                         android:src="@drawable/ic_refresh"
                         android:background="@drawable/secondary_header_button_bg"
-                        android:contentDescription="Refresh"
+                        android:contentDescription="@string/main_cloud_refresh"
                         android:scaleType="centerInside"
                         android:focusable="true"
 
@@ -184,7 +184,7 @@
                 android:textSize="12sp"
                 android:textColor="#4DFFFFFF"
                 android:fontFamily="sans-serif-medium"
-                android:text="0 games"
+                android:text="@string/main_cloud_count"
                 android:visibility="gone" />
 
             <LinearLayout
@@ -206,7 +206,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="No games found"
+                    android:text="@string/main_cloud_empty"
                     android:textSize="16sp"
                     android:textColor="?android:textColorSecondary" />
 
@@ -317,7 +317,7 @@
                 style="@style/AppTheme.FloatingActionButtonSpeedDial"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="All Games"
+                android:text="@string/main_cloud_all_games_title"
                 android:textStyle="bold"
                 app:rippleColor="@color/floating_action_button_speed_dial_tint"
                 app:cornerRadius="8dp" />
@@ -346,7 +346,7 @@
                 style="@style/AppTheme.FloatingActionButtonSpeedDial"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sort: Recent"
+                android:text="@string/main_cloud_sort_recent"
                 android:textStyle="bold"
                 app:rippleColor="@color/floating_action_button_speed_dial_tint"
                 app:cornerRadius="8dp" />
@@ -373,7 +373,7 @@
                 style="@style/AppTheme.FloatingActionButtonSpeedDial"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Refresh Games List"
+                android:text="@string/main_cloud_refresh_list"
                 android:textStyle="bold"
                 app:rippleColor="@color/floating_action_button_speed_dial_tint"
                 app:cornerRadius="8dp" />
