@@ -903,7 +903,7 @@ class CloudPlayFragment : Fragment()
 			showAddToLibraryQrDialog(game)
 		} else {
 			requireContext().alertDialogBuilder()
-				.setTitle("Add to Library")
+				.setTitle(R.string.cloud_add_library)
 				.setMessage("This game needs to be added to your library before you can stream it.\n\nAfter adding the game, press the Refresh Games button to update your list.")
 				.setPositiveButton(R.string.cloud_add_now) { _, _ ->
 					openUrlInBrowser(game.conceptUrl)
@@ -952,7 +952,7 @@ class CloudPlayFragment : Fragment()
 		val scroll = ScrollView(ctx).apply { addView(layout) }
 
 		ctx.alertDialogBuilder()
-			.setTitle("Add to Library")
+			.setTitle(R.string.cloud_add_library)
 			.setView(scroll)
 			.setPositiveButton(R.string.cloud_done, null)
 			.show()
@@ -1235,7 +1235,7 @@ class CloudPlayFragment : Fragment()
 		requireContext().alertDialogBuilder()
 			.setTitle(R.string.cloud_psplus_required)
 			.setMessage(R.string.cloud_psplus_message)
-			.setPositiveButton("OK", null)
+			.setPositiveButton(R.string.action_ok, null)
 			.show()
 	}
 	
@@ -1247,7 +1247,7 @@ class CloudPlayFragment : Fragment()
 		requireContext().alertDialogBuilder()
 			.setTitle(R.string.cloud_account_update)
 			.setMessage(getString(R.string.cloud_account_message, upgradeUrl))
-			.setPositiveButton("OK", null)
+			.setPositiveButton(R.string.action_ok, null)
 			.show()
 	}
 	
@@ -1259,7 +1259,7 @@ class CloudPlayFragment : Fragment()
 		requireContext().alertDialogBuilder()
 			.setTitle(R.string.cloud_ping_high)
 			.setMessage(R.string.cloud_ping_message)
-			.setPositiveButton("OK", null)
+			.setPositiveButton(R.string.action_ok, null)
 			.show()
 	}
 	
@@ -1271,7 +1271,7 @@ class CloudPlayFragment : Fragment()
 		requireContext().alertDialogBuilder()
 			.setTitle(R.string.cloud_auth_failed)
 			.setMessage(R.string.cloud_auth_message)
-			.setPositiveButton("OK", null)
+			.setPositiveButton(R.string.action_ok, null)
 			.show()
 	}
 	
@@ -1283,7 +1283,7 @@ class CloudPlayFragment : Fragment()
 		requireContext().alertDialogBuilder()
 			.setTitle(title)
 			.setMessage(message)
-			.setPositiveButton("OK", null)
+			.setPositiveButton(R.string.action_ok, null)
 			.show()
 	}
 	
