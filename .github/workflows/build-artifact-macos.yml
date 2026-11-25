@@ -3,6 +3,14 @@
 name: Build macOS (artifact)
 
 on:
+  push:
+    branches:
+      - Chinese
+    paths:
+      - "gui/**"
+      - "CMakeLists.txt"
+      - "scripts/build-macos.sh"
+      - ".github/workflows/build-artifact-macos.yml"
   workflow_dispatch:
     inputs:
       arch:
