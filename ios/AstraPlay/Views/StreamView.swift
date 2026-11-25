@@ -9,17 +9,17 @@ private let streamViewLog = OSLog(subsystem: "com.astraplay.stream", category: "
 
 private func chiakiQuitReasonDescription(_ reason: Int32) -> String {
     switch reason {
-    case 0: return "Stream stopped normally."
-    case 1: return "Stopped."
-    case 0x01000001: return "Session request failed (unknown reason)."
-    case 0x01000002: return "Connection refused by console. It may be in use or not ready."
-    case 0x01000003: return "Streaming is already in use on the console."
-    case 0x01000004: return "The console ended streaming unexpectedly. Please wait and try again."
-    case 0x02000001: return "Control connection failed (unknown)."
-    case 0x02000002: return "Control connection refused. Check network settings."
-    case 0x04000001: return "Stream connection timed out."
+    case 0: return NSLocalizedString("Stream stopped normally.", comment: "Stream end reason")
+    case 1: return NSLocalizedString("Stopped.", comment: "Stream end reason")
+    case 0x01000001: return NSLocalizedString("Session request failed (unknown reason).", comment: "Stream end reason")
+    case 0x01000002: return NSLocalizedString("Connection refused by console. It may be in use or not ready.", comment: "Stream end reason")
+    case 0x01000003: return NSLocalizedString("Streaming is already in use on the console.", comment: "Stream end reason")
+    case 0x01000004: return NSLocalizedString("The console ended streaming unexpectedly. Please wait and try again.", comment: "Stream end reason")
+    case 0x02000001: return NSLocalizedString("Control connection failed (unknown).", comment: "Stream end reason")
+    case 0x02000002: return NSLocalizedString("Control connection refused. Check network settings.", comment: "Stream end reason")
+    case 0x04000001: return NSLocalizedString("Stream connection timed out.", comment: "Stream end reason")
     default:
-        return String(format: "Stream ended (code: 0x%08x).", UInt32(bitPattern: reason))
+        return String(format: NSLocalizedString("Stream ended (code: 0x%08x).", comment: "Stream end reason"), UInt32(bitPattern: reason))
     }
 }
 
