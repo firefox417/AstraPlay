@@ -61,7 +61,7 @@ Item {
                 bottomMargin: 3
                 horizontalCenter: l1Button.horizontalCenter
             }
-            text: "(bumper)"
+            text: qsTr("(bumper)")
             font.pixelSize: 13
             color: "#888888"
             horizontalAlignment: Text.AlignHCenter
@@ -98,7 +98,7 @@ Item {
                 bottomMargin: 3
                 horizontalCenter: r1Button.horizontalCenter
             }
-            text: "(bumper)"
+            text: qsTr("(bumper)")
             font.pixelSize: 13
             color: "#888888"
             horizontalAlignment: Text.AlignHCenter
