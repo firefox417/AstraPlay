@@ -108,7 +108,7 @@ class RemotePlayFragment : Fragment()
 		binding.refreshPsnLabelButton.text = if (isLoggedIn) {
 			getString(R.string.main_remote_refresh)
 		} else {
-			getString(R.string.remote_login)
+			getString(R.string.main_remote_login_add)
 		}
 	}
 
