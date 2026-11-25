@@ -62,10 +62,10 @@ enum MotionSource: String, Codable, CaseIterable, Identifiable {
     var id: String { rawValue }
     var label: String {
         switch self {
-        case .auto: return "Auto (controller, fall back to phone)"
-        case .controller: return "Controller only"
-        case .phone: return "Phone only"
-        case .off: return "Off"
+        case .auto: return NSLocalizedString("Auto (controller, fall back to phone)", comment: "Motion source")
+        case .controller: return NSLocalizedString("Controller only", comment: "Motion source")
+        case .phone: return NSLocalizedString("Phone only", comment: "Motion source")
+        case .off: return NSLocalizedString("Off", comment: "Motion source")
         }
     }
 }
