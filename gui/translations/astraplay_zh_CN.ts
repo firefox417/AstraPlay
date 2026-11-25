@@ -984,4 +984,10 @@ To continue anyway, go to Settings → Cloud and manually select a datacenter fo
 <name>DialogView</name>
 <message><source>Remote Play Client</source><translation>远程游玩客户端</translation></message>
 </context>
+<context>
+<name>SettingsDialog</name>
+<message><source>Application Language:</source><translation>应用语言：</translation></message>
+<message><source>System Default</source><translation>跟随系统</translation></message>
+<message><source>Restart AstraPlay to apply the language change.</source><translation>重启 AstraPlay 以应用语言更改。</translation></message>
+</context>
 </TS>
