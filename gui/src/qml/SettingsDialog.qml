@@ -290,6 +290,30 @@ DialogView {
 
                         Label {
                             Layout.alignment: Qt.AlignRight
+                            text: qsTr("Application Language:")
+                        }
+
+                        C.ComboBox {
+                            Layout.preferredWidth: 400
+                            firstInFocusChain: true
+                            model: [qsTr("System Default"), "English", "简体中文"]
+                            currentIndex: {
+                                const language = AstraPlay.settings.interfaceLanguage;
+                                language === "en" ? 1 : language === "zh_CN" ? 2 : 0
+                            }
+                            onActivated: index => {
+                                AstraPlay.settings.interfaceLanguage = index === 1 ? "en" : index === 2 ? "zh_CN" : "system";
+                            }
+                        }
+
+                        Label {
+                            Layout.alignment: Qt.AlignLeft
+                            text: qsTr("Restart AstraPlay to apply the language change.")
+                            wrapMode: Text.Wrap
+                        }
+
+                        Label {
+                            Layout.alignment: Qt.AlignRight
                             text: qsTr("Action On Disconnect:")
                         }
 
