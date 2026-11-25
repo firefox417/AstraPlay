@@ -123,11 +123,47 @@
 <message><source>Target Transfer Characteristics:</source><translation>目标传递特性：</translation></message>
 <message><source>Target Peak:</source><translation>目标峰值：</translation></message>
 <message><source>Numeric Value</source><translation>数值</translation></message>
-<message><source>Target Peak Value:</source><translation>目标峰值：</translation></message>
+<message><source>Target Peak Value:</source><translation>目标峰值数值：</translation></message>
 <message><source> nits</source><translation> 尼特</translation></message>
 <message><source>Target Contrast:</source><translation>目标对比度：</translation></message>
 <message><source>Infinity</source><translation>无限大</translation></message>
 <message><source>Target Contrast Value:</source><translation>目标对比度数值：</translation></message>
+<message><source>ITU-R Rec. BT.601 NTSC (Standard Gamut)</source><translation>ITU-R Rec. BT.601 NTSC（标准色域）</translation></message>
+<message><source>ITU-R Rec. BT.601 PAL (Standard Gamut)</source><translation>ITU-R Rec. BT.601 PAL（标准色域）</translation></message>
+<message><source>ITU-R Rec. BT.709 (Standard Gamut)</source><translation>ITU-R Rec. BT.709（标准色域）</translation></message>
+<message><source>ITU-R Rec. BT.470 M (Standard Gamut)</source><translation>ITU-R Rec. BT.470 M（标准色域）</translation></message>
+<message><source>EBU Tech. 3213-E (Standard Gamut)</source><translation>EBU Tech. 3213-E（标准色域）</translation></message>
+<message><source>ITU-R Rec. BT.2020 (Wide Gamut)</source><translation>ITU-R Rec. BT.2020（广色域）</translation></message>
+<message><source>Apple RGB (Wide Gamut)</source><translation>Apple RGB（广色域）</translation></message>
+<message><source>Adobe RGB (Wide Gamut)</source><translation>Adobe RGB（广色域）</translation></message>
+<message><source>ProPhoto RGB (Wide Gamut)</source><translation>ProPhoto RGB（广色域）</translation></message>
+<message><source>CIE 1931 RGB primaries (Wide Gamut)</source><translation>CIE 1931 RGB 原色（广色域）</translation></message>
+<message><source>DCI-P3 (Wide Gamut)</source><translation>DCI-P3（广色域）</translation></message>
+<message><source>DCI-P3 with D65 white point (Wide Gamut)</source><translation>D65 白点 DCI-P3（广色域）</translation></message>
+<message><source>Panasonic V-Gamut (Wide Gamut)</source><translation>Panasonic V-Gamut（广色域）</translation></message>
+<message><source>Sony S-Gamut (Wide Gamut)</source><translation>Sony S-Gamut（广色域）</translation></message>
+<message><source>Traditional film primaries with Illuminant C (Wide Gamut)</source><translation>传统胶片原色（C 光源，广色域）</translation></message>
+<message><source>ACES Primaries #0 (Wide Gamut)</source><translation>ACES 原色 #0（广色域）</translation></message>
+<message><source>ACES Primaries #1 (Wide Gamut)</source><translation>ACES 原色 #1（广色域）</translation></message>
+<message><source>(Auto)</source><translation>（自动）</translation></message>
+<message><source>ITU-R Rec. BT.1886 (SDR)</source><translation>ITU-R Rec. BT.1886（SDR）</translation></message>
+<message><source>IEC 61966-2-4 sRGB (SDR)</source><translation>IEC 61966-2-4 sRGB（SDR）</translation></message>
+<message><source>Linear light content (SDR)</source><translation>线性光内容（SDR）</translation></message>
+<message><source>IPure power gamma 1.8 (SDR)</source><translation>纯幂伽马 1.8（SDR）</translation></message>
+<message><source>Pure power gamma 2.0 (SDR)</source><translation>纯幂伽马 2.0（SDR）</translation></message>
+<message><source>Pure power gamma 2.2 (SDR)</source><translation>纯幂伽马 2.2（SDR）</translation></message>
+<message><source>Pure power gamma 2.4 (SDR)</source><translation>纯幂伽马 2.4（SDR）</translation></message>
+<message><source>Pure power gamma 2.6 (SDR)</source><translation>纯幂伽马 2.6（SDR）</translation></message>
+<message><source>Pure power gamma 2.8 (SDR)</source><translation>纯幂伽马 2.8（SDR）</translation></message>
+<message><source>ProPhoto RGB (SDR)</source><translation>ProPhoto RGB（SDR）</translation></message>
+<message><source>Digital Cinema Distribution Master (SDR)</source><translation>数字电影发行母版（SDR）</translation></message>
+<message><source>ITU-R BT.2100 PQ / SMPTE ST2048 (HDR)</source><translation>ITU-R BT.2100 PQ / SMPTE ST2048（HDR）</translation></message>
+<message><source>ITU-R BT.2100 HLG / ARIB STD-B67 (HDR)</source><translation>ITU-R BT.2100 HLG / ARIB STD-B67（HDR）</translation></message>
+<message><source>Panasonic V-Log (HDR)</source><translation>Panasonic V-Log（HDR）</translation></message>
+<message><source>Sony S-Log1 (HDR)</source><translation>Sony S-Log1（HDR）</translation></message>
+<message><source>Sony S-Log2 (HDR)</source><translation>Sony S-Log2（HDR）</translation></message>
+<message><source>(1000 nits)</source><translation>（1000 尼特）</translation></message>
+<message><source>(1000)</source><translation>（1000）</translation></message>
 </context>
 <context>
 <name>PlaceboSettingsDialog</name>
@@ -224,6 +260,197 @@ To continue anyway, go to Settings → Cloud and manually select a datacenter fo
 <message><source>Controllers</source><translation>控制器</translation></message>
 <message><source>Config</source><translation>配置</translation></message>
 <message><source>Cloud</source><translation>云游戏</translation></message>
+<message><source>Action On Disconnect:</source><translation>断开连接时的操作：</translation></message>
+<message><source>Do Nothing</source><translation>不执行任何操作</translation></message>
+<message><source>Enter Sleep Mode</source><translation>进入休眠模式</translation></message>
+<message><source>Ask</source><translation>询问</translation></message>
+<message><source>(Ask)</source><translation>（询问）</translation></message>
+<message><source>Action On Suspend:</source><translation>挂起时的操作：</translation></message>
+<message><source>(Do Nothing)</source><translation>（不执行任何操作）</translation></message>
+<message><source>Steam Deck Haptics:</source><translation>Steam Deck 触觉反馈：</translation></message>
+<message><source>True haptics for SteamDeck, better quality but noisier</source><translation>Steam Deck 真触觉反馈，质量更好但声音更大</translation></message>
+<message><source>(Unchecked)</source><translation>（未勾选）</translation></message>
+<message><source>Steam Deck Vertical:</source><translation>Steam Deck 竖屏模式：</translation></message>
+<message><source>Use Steam Deck in vertical orientation (motion controls)</source><translation>将 Steam Deck 竖屏使用（体感控制）</translation></message>
+<message><source>Audio/Video:</source><translation>音频/视频：</translation></message>
+<message><source>Audio and Video Enabled</source><translation>启用音频和视频</translation></message>
+<message><source>Audio Disabled</source><translation>禁用音频</translation></message>
+<message><source>Video Disabled</source><translation>禁用视频</translation></message>
+<message><source>Audio and Video Disabled</source><translation>禁用音频和视频</translation></message>
+<message><source>Log Directory:</source><translation>日志目录：</translation></message>
+<message><source>Open</source><translation>打开</translation></message>
+<message><source>Streamer Mode (Hides Info)</source><translation>主播模式（隐藏信息）</translation></message>
+<message><source>Stream Menu Shortcut Enabled</source><translation>启用串流菜单快捷键</translation></message>
+<message><source>(Checked)</source><translation>（已勾选）</translation></message>
+<message><source>Sync Console Game Data</source><translation>同步主机游戏数据</translation></message>
+<message><source>Save game list for main screen</source><translation>保存游戏列表并显示在主屏幕</translation></message>
+<message><source>Display Game Art While Loading</source><translation>加载时显示游戏封面</translation></message>
+<message><source>Automatic Updates:</source><translation>自动更新：</translation></message>
+<message><source>Automatically check for updates on startup (Recommended)</source><translation>启动时自动检查更新（推荐）</translation></message>
+<message><source>Opt out of automatic updates (Manual updates only)</source><translation>不自动更新（仅手动更新）</translation></message>
+<message><source>Automatically download updates in background</source><translation>在后台自动下载更新</translation></message>
+<message><source>(Enabled)</source><translation>（已启用）</translation></message>
+<message><source>(Opted out)</source><translation>（已关闭）</translation></message>
+<message><source>Package Updates:</source><translation>程序包更新：</translation></message>
+<message><source>Manual Update:</source><translation>手动更新：</translation></message>
+<message><source>Checking...</source><translation>正在检查…</translation></message>
+<message><source>Check for Updates</source><translation>检查更新</translation></message>
+<message><source>Install &amp; Restart</source><translation>安装并重启</translation></message>
+<message><source>Downloading...</source><translation>正在下载…</translation></message>
+<message><source>Install Update Now</source><translation>立即安装更新</translation></message>
+<message><source>Stream Menu Combo:</source><translation>串流菜单组合键：</translation></message>
+<message><source>Not Used</source><translation>未使用</translation></message>
+<message><source>Cross</source><translation>叉（×）</translation></message>
+<message><source>Moon</source><translation>圆（○）</translation></message>
+<message><source>Box</source><translation>方块（□）</translation></message>
+<message><source>Pyramid</source><translation>三角（△）</translation></message>
+<message><source>Dpad Left</source><translation>方向键左</translation></message>
+<message><source>Dpad Right</source><translation>方向键右</translation></message>
+<message><source>Dpad Up</source><translation>方向键上</translation></message>
+<message><source>Dpad Down</source><translation>方向键下</translation></message>
+<message><source>L1</source><translation>L1</translation></message>
+<message><source>R1</source><translation>R1</translation></message>
+<message><source>L3</source><translation>L3</translation></message>
+<message><source>R3</source><translation>R3</translation></message>
+<message><source>Options</source><translation>Options 键</translation></message>
+<message><source>Share</source><translation>Share 键</translation></message>
+<message><source>Touchpad</source><translation>触摸板</translation></message>
+<message><source>PS</source><translation>PS 键</translation></message>
+<message><source>Hardware Decoder:</source><translation>硬件解码器：</translation></message>
+<message><source>(Auto)</source><translation>（自动）</translation></message>
+<message><source>Window Type:</source><translation>窗口类型：</translation></message>
+<message><source>Stream Resolution</source><translation>串流分辨率</translation></message>
+<message><source>Custom Resolution</source><translation>自定义分辨率</translation></message>
+<message><source>Adjust Resolution Manually</source><translation>手动调整分辨率</translation></message>
+<message><source>Fullscreen</source><translation>全屏</translation></message>
+<message><source>Zoom [adjust zoom using slider in stream menu]</source><translation>缩放［使用串流菜单中的滑块调整］</translation></message>
+<message><source>Stretch</source><translation>拉伸</translation></message>
+<message><source>(Stream Resolution)</source><translation>（串流分辨率）</translation></message>
+<message><source>Custom Resolution Width</source><translation>自定义分辨率宽度</translation></message>
+<message><source>Custom Resolution Height</source><translation>自定义分辨率高度</translation></message>
+<message><source>Toggle Fullscreen on Double-click:</source><translation>双击切换全屏：</translation></message>
+<message><source>Hide Cursor during Stream</source><translation>串流期间隐藏光标</translation></message>
+<message><source>Render Preset:</source><translation>渲染预设：</translation></message>
+<message><source>Fast</source><translation>快速</translation></message>
+<message><source>Default</source><translation>默认</translation></message>
+<message><source>High Quality</source><translation>高质量</translation></message>
+<message><source>Custom</source><translation>自定义</translation></message>
+<message><source>(High Quality)</source><translation>（高质量）</translation></message>
+<message><source>Custom Renderer Settings</source><translation>自定义渲染器设置</translation></message>
+<message><source>Display Settings</source><translation>显示设置</translation></message>
+<message><source>Settings for:</source><translation>设置对象：</translation></message>
+<message><source>PS4</source><translation>PS4</translation></message>
+<message><source>PS5</source><translation>PS5</translation></message>
+<message><source>Local</source><translation>本地</translation></message>
+<message><source>Remote</source><translation>远程</translation></message>
+<message><source>Resolution:</source><translation>分辨率：</translation></message>
+<message><source>720p (Default)</source><translation>720p（默认）</translation></message>
+<message><source>1080p (PS5 and PS4 Pro)</source><translation>1080p（PS5 和 PS4 Pro）</translation></message>
+<message><source>1080p (Default)</source><translation>1080p（默认）</translation></message>
+<message><source>FPS:</source><translation>帧率：</translation></message>
+<message><source>30 fps</source><translation>30 帧/秒</translation></message>
+<message><source>60 fps (Default)</source><translation>60 帧/秒（默认）</translation></message>
+<message><source>Bitrate:</source><translation>码率：</translation></message>
+<message><source> Mbps</source><translation> Mbps</translation></message>
+<message><source> (%1 Mbps)</source><translation>（%1 Mbps）</translation></message>
+<message><source>Codec:</source><translation>编码格式：</translation></message>
+<message><source>H265 (Default)</source><translation>H.265（默认）</translation></message>
+<message><source>H265 HDR</source><translation>H.265 HDR</translation></message>
+<message><source>Output Device:</source><translation>输出设备：</translation></message>
+<message><source>Auto</source><translation>自动</translation></message>
+<message><source>Input Device:</source><translation>输入设备：</translation></message>
+<message><source>Audio Buffer Size:</source><translation>音频缓冲区大小：</translation></message>
+<message><source> ms</source><translation> 毫秒</translation></message>
+<message><source>(50 ms)</source><translation>（50 毫秒）</translation></message>
+<message><source>Audio Volume:</source><translation>音量：</translation></message>
+<message><source>% volume</source><translation>% 音量</translation></message>
+<message><source>Start Mic Unmuted:</source><translation>启动时麦克风不静音：</translation></message>
+<message><source>Speech Processing:</source><translation>语音处理：</translation></message>
+<message><source>Noise suppression + echo cancellation</source><translation>降噪与回声消除</translation></message>
+<message><source>Noise To Suppress:</source><translation>降噪强度：</translation></message>
+<message><source>%1 dB</source><translation>%1 dB</translation></message>
+<message><source>(6 dB)</source><translation>（6 dB）</translation></message>
+<message><source>Echo To Suppress:</source><translation>回声抑制：</translation></message>
+<message><source>(30 dB)</source><translation>（30 dB）</translation></message>
+<message><source>Weak Wifi Notification:</source><translation>弱 Wi-Fi 提示：</translation></message>
+<message><source>&gt;= %1% dropped packets</source><translation>丢包率 ≥ %1%</translation></message>
+<message><source>Packet Loss Reported Max:</source><translation>报告的最大丢包率：</translation></message>
+<message><source>%1% packet loss</source><translation>丢包率 %1%</translation></message>
+<message><source>Show Stream Stats During Gameplay</source><translation>游戏期间显示串流统计信息</translation></message>
+<message><source>Register New</source><translation>注册新主机</translation></message>
+<message><source>Registered Consoles</source><translation>已注册的主机</translation></message>
+<message><source>Auto-Connect</source><translation>自动连接</translation></message>
+<message><source>Delete</source><translation>删除</translation></message>
+<message><source>Delete Console</source><translation>删除主机</translation></message>
+<message><source>Are you sure you want to delete this console?</source><translation>确定要删除这台主机吗？</translation></message>
+<message><source>Hidden Consoles</source><translation>已隐藏的主机</translation></message>
+<message><source>Unhide</source><translation>取消隐藏</translation></message>
+<message><source>Unhide Console</source><translation>取消隐藏主机</translation></message>
+<message><source>Are you sure you want to unhide this console?</source><translation>确定要取消隐藏这台主机吗？</translation></message>
+<message><source>Enable Keyboard mapping</source><translation>启用键盘映射</translation></message>
+<message><source>Enable Mouse Touchpad</source><translation>启用鼠标触摸板</translation></message>
+<message><source>Apply Base Layout</source><translation>应用基础布局</translation></message>
+<message><source>Layout Applied</source><translation>布局已应用</translation></message>
+<message><source>Background Controller Events:</source><translation>后台手柄事件：</translation></message>
+<message><source>Process controller input when application is in background</source><translation>应用在后台运行时仍处理手柄输入</translation></message>
+<message><source>Dpad Touchpad Emulation</source><translation>方向键触摸板模拟</translation></message>
+<message><source>Dpad Touch Increment:</source><translation>方向键触摸增量：</translation></message>
+<message><source>%1 mm</source><translation>%1 毫米</translation></message>
+<message><source>(0.3 mm)</source><translation>（0.3 毫米）</translation></message>
+<message><source>Dpad Regular/Touch Combo:</source><translation>方向键普通/触控组合：</translation></message>
+<message><source>(L1+R1+dpad Up)</source><translation>（L1+R1+方向键上）</translation></message>
+<message><source>Buttons By Position:</source><translation>按位置映射按键：</translation></message>
+<message><source>Use buttons by position instead of by label</source><translation>按按键位置而不是标签进行映射</translation></message>
+<message><source>Rumble Haptics:</source><translation>震动反馈：</translation></message>
+<message><source>Off</source><translation>关闭</translation></message>
+<message><source>Very Weak</source><translation>非常弱</translation></message>
+<message><source>Weak</source><translation>弱</translation></message>
+<message><source>Normal</source><translation>普通</translation></message>
+<message><source>Strong</source><translation>强</translation></message>
+<message><source>Very Strong</source><translation>非常强</translation></message>
+<message><source>(Normal)</source><translation>（普通）</translation></message>
+<message><source>True Haptics Intensity:</source><translation>真实触觉反馈强度：</translation></message>
+<message><source>console setting</source><translation>主机设置</translation></message>
+<message><source> % console setting</source><translation>% 主机设置</translation></message>
+<message><source>(console setting)</source><translation>（主机设置）</translation></message>
+<message><source>Current Profile: </source><translation>当前配置：</translation></message>
+<message><source>Current Profile: default</source><translation>当前配置：默认</translation></message>
+<message><source>Manage Profiles</source><translation>管理配置</translation></message>
+<message><source>PSN Login Relay URL</source><translation>PSN 登录中继网址</translation></message>
+<message><source>Default (Embedded: 127.0.0.1:25525)</source><translation>默认（内置：127.0.0.1:25525）</translation></message>
+<message><source>Login</source><translation>登录</translation></message>
+<message><source>Clear Token</source><translation>清除令牌</translation></message>
+<message><source>Clear Saved Game Data</source><translation>清除已保存的游戏数据</translation></message>
+<message><source>Export settings to file</source><translation>将设置导出到文件</translation></message>
+<message><source>Import settings from file</source><translation>从文件导入设置</translation></message>
+<message><source>Console Setup Guide</source><translation>主机设置指南</translation></message>
+<message><source>Software Updates (Update Available!)</source><translation>软件更新（有可用更新！）</translation></message>
+<message><source>Software Updates</source><translation>软件更新</translation></message>
+<message><source>About</source><translation>关于</translation></message>
+<message><source>Privacy Policy &amp; Zero Data Guarantee</source><translation>隐私政策与零数据收集承诺</translation></message>
+<message><source>Verbose Logging (unchecked)</source><translation>详细日志（未勾选）</translation></message>
+<message><source>Owned Games (PS5)</source><translation>已拥有的游戏（PS5）</translation></message>
+<message><source>Streamable Games (PS3/PS4)</source><translation>可串流的游戏（PS3/PS4）</translation></message>
+<message><source>Game Language:</source><translation>游戏语言：</translation></message>
+<message><source>Not all regions support every language. A language only works on datacenters that offer it — if your chosen language isn't applied, pick a matching Datacenter below.</source><translation>并非所有地区都支持每种语言。语言仅在提供该语言的数据中心生效；如果所选语言未生效，请在下方选择支持该语言的数据中心。</translation></message>
+<message><source>Datacenter:</source><translation>数据中心：</translation></message>
+<message><source>(20 Mbps)</source><translation>（20 Mbps）</translation></message>
+<message><source>About AstraPlay</source><translation>关于 AstraPlay</translation></message>
+<message><source>AstraPlay</source><translation>AstraPlay</translation></message>
+<message><source>Version %1</source><translation>版本 %1</translation></message>
+<message><source>License</source><translation>许可证</translation></message>
+<message><source>Licensed under the GNU Affero General Public License version 3.</source><translation>根据 GNU Affero 通用公共许可证第 3 版授权。</translation></message>
+<message><source>Warranty</source><translation>免责声明</translation></message>
+<message><source>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</source><translation>本程序以希望其有用的方式发布，但不提供任何保证，包括适销性或特定用途适用性的默示保证。</translation></message>
+<message><source>Privacy &amp; Permissions</source><translation>隐私与权限</translation></message>
+<message><source>Zero Data Collection: AstraPlay does NOT collect, track, store, or sell any personal data or usage metrics. All permissions requested on your device are strictly used for local console discovery, low-latency streaming, controller input, and direct communication with official PlayStation servers.</source><translation>零数据收集：AstraPlay 不会收集、跟踪、存储或出售任何个人数据或使用指标。应用请求的所有设备权限仅用于本地发现主机、低延迟串流、手柄输入，以及直接连接 PlayStation 官方服务器。</translation></message>
+<message><source>Full License Text</source><translation>完整许可证文本</translation></message>
+<message><source>Key Capture</source><translation>按键捕获</translation></message>
+<message><source>Press any key to configure button or click close</source><translation>按任意键配置按键，或点击关闭</translation></message>
+<message><source>Controller Capture</source><translation>手柄捕获</translation></message>
+<message><source>Choose the controller by pressing any button on the controller</source><translation>按下手柄上的任意按键以选择该手柄</translation></message>
+<message><source>Controller Managed by Steam</source><translation>手柄由 Steam 管理</translation></message>
+<message><source>This controller is managed by Steam.\nPlease use Steam to map controller or disable Steam Input for the controller before mapping here.</source><translation>此手柄由 Steam 管理。\n请使用 Steam 进行按键映射，或先为该手柄禁用 Steam Input，再在此处映射。</translation></message>
 </context>
 <context>
 <name>RegistDialog</name>
