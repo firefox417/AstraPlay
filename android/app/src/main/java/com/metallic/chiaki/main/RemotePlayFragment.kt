@@ -290,7 +290,7 @@ class RemotePlayFragment : Fragment()
 				activity?.runOnUiThread {
 					if(ok)
 					{
-						Toast.makeText(requireContext(), "Refreshing consoles list...", Toast.LENGTH_SHORT).show()
+						Toast.makeText(requireContext(), getString(R.string.remote_refreshing), Toast.LENGTH_SHORT).show()
 						viewModel.refreshPsnHosts()
 						updateRefreshButtonText()
 					}
@@ -378,7 +378,7 @@ class RemotePlayFragment : Fragment()
 		requireContext().alertDialogBuilder()
 			.setTitle(getString(R.string.remote_console_setup))
 			.setMessage("Login for automatic console setup or enter console information manually.")
-			.setPositiveButton("Login") { _, _ ->
+			.setPositiveButton(R.string.remote_login) { _, _ ->
 				launchPsnLogin()
 			}
 			.setNegativeButton(R.string.remote_manual) { _, _ ->
@@ -404,7 +404,7 @@ class RemotePlayFragment : Fragment()
 						Log.i(TAG, "User chose automatic PSN registration for discovered host")
 						showAutoRegistrationDialog(duid, host.name ?: "Console", host.isPS5)
 					}
-					.setNegativeButton("Manual") { _, _ ->
+					.setNegativeButton(R.string.remote_manual) { _, _ ->
 						launchManualRegistration(host)
 					}
 					.create()
@@ -508,7 +508,7 @@ class RemotePlayFragment : Fragment()
 		{
 			Log.w(TAG, "No PSN tokens available, showing login prompt")
 			requireContext().alertDialogBuilder()
-				.setTitle("PSN Login Required")
+				.setTitle(R.string.remote_psn_required)
 				.setMessage("You need to log in with your PSN account to connect to consoles over the internet. Please log in from Settings or the Cloud Play tab.")
 				.setPositiveButton(android.R.string.ok, null)
 				.show()
@@ -547,13 +547,13 @@ class RemotePlayFragment : Fragment()
 				"Would you like to use automatic registration (must be main PS4 console registered to your account)?"
 
 			requireContext().alertDialogBuilder()
-				.setTitle("Registration Type")
+				.setTitle(R.string.remote_registration_type)
 				.setMessage(message)
-				.setPositiveButton("Automatic") { _, _ ->
+				.setPositiveButton(R.string.remote_automatic) { _, _ ->
 					Log.i(TAG, "User chose automatic PSN registration")
 					showAutoRegistrationDialog(host.duid, host.name ?: "Console", host.isPS5)
 				}
-				.setNegativeButton("Manual") { _, _ ->
+				.setNegativeButton(R.string.remote_manual) { _, _ ->
 					Log.i(TAG, "User chose manual registration")
 					// For PSN hosts, we don't have a local IP, so launch with broadcast
 					Intent(requireContext(), RegistActivity::class.java).let {
