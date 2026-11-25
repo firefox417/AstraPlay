@@ -522,13 +522,13 @@
     <string name="cloud_region_foreign">其他地区</string>
 
     <!-- Main list cards -->
-    <string name="main_cloud_badge_owned">main_cloud_badge_owned</string>
-    <string name="main_cloud_badge_streamable">main_cloud_badge_streamable</string>
-    <string name="main_cloud_badge_add">main_cloud_badge_add</string>
-    <string name="main_cloud_game_cover">main_cloud_game_cover</string>
-    <string name="main_cloud_favorite">main_cloud_favorite</string>
-    <string name="main_host_remote">main_host_remote</string>
-    <string name="main_host_ready">main_host_ready</string>
-    <string name="main_host_standby">main_host_standby</string>
-    <string name="main_host_mac">main_host_mac</string>
+    <string name="main_cloud_badge_owned">Owned</string>
+    <string name="main_cloud_badge_streamable">Streamable</string>
+    <string name="main_cloud_badge_add">Add Game</string>
+    <string name="main_cloud_game_cover">Game cover</string>
+    <string name="main_cloud_favorite">Favorite</string>
+    <string name="main_host_remote">Remote Console</string>
+    <string name="main_host_ready">Ready</string>
+    <string name="main_host_standby">Standby</string>
+    <string name="main_host_mac">MAC: %1$s</string>
 </resources>
