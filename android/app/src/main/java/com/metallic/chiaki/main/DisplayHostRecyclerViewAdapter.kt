@@ -65,15 +65,15 @@ class DisplayHostRecyclerViewAdapter(
 			it.platformBadge.text = if(host.isPS5) "5" else "4"
 			it.platformTextView.text = if(host.isPS5) "PS5" else "PS4"
 			
-			// For PSN hosts: just show "Remote Console" and ready icon
+			// For PSN hosts: just show context.getString(R.string.main_host_remote) and ready icon
 			if(host is PsnDisplayHost)
 			{
-				it.hostTextView.text = "Remote Console"
+				it.hostTextView.text = context.getString(R.string.main_host_remote)
 				it.hostTextView.setTextColor(android.graphics.Color.parseColor("#FFFFFF"))
 				it.hostTextView.textSize = 16f
 				it.idTextView.visibility = View.GONE
 				it.statusLayout.visibility = View.VISIBLE
-				it.statusTextView.text = "Ready"
+				it.statusTextView.text = context.getString(R.string.main_host_ready)
 				it.statusIcon.setColorFilter(context.getColor(R.color.psn_blue))
 			}
 			else
@@ -92,7 +92,7 @@ class DisplayHostRecyclerViewAdapter(
 						id.chunked(2).joinToString(":")
 					else
 						id
-					it.idTextView.text = "MAC: $formatted"
+					it.idTextView.text = context.getString(R.string.main_host_mac, formatted)
 					it.idTextView.visibility = View.VISIBLE
 				}
 				else
@@ -103,8 +103,8 @@ class DisplayHostRecyclerViewAdapter(
 				// State/Status with colored dot on the right
 				val stateText = when
 				{
-					host is DiscoveredDisplayHost && host.discoveredHost.state == DiscoveryHost.State.READY -> "Ready"
-					host is DiscoveredDisplayHost && host.discoveredHost.state == DiscoveryHost.State.STANDBY -> "Standby"
+					host is DiscoveredDisplayHost && host.discoveredHost.state == DiscoveryHost.State.READY -> context.getString(R.string.main_host_ready)
+					host is DiscoveredDisplayHost && host.discoveredHost.state == DiscoveryHost.State.STANDBY -> context.getString(R.string.main_host_standby)
 					else -> null
 				}
 				

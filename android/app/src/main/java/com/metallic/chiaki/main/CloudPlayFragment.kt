@@ -427,7 +427,7 @@ class CloudPlayFragment : Fragment()
 		CloudCategory.STREAMABLE,
 		CloudCategory.PURCHASEABLE
 	)
-	private val tagFilterLabels = listOf("Owned", "Streamable", "Store")
+	private val tagFilterLabels by lazy { listOf(getString(R.string.cloud_owned), getString(R.string.cloud_streamable), getString(R.string.cloud_store)) }
 
 	private fun setupHeaderControls()
 	{
@@ -476,11 +476,11 @@ class CloudPlayFragment : Fragment()
 			allActive || viewModel.isTagFilterActive(tagFilterCategories[it])
 		}
 		requireContext().alertDialogBuilder()
-			.setTitle("Filter games")
+			.setTitle(R.string.cloud_filter_title)
 			.setMultiChoiceItems(tagFilterLabels.toTypedArray(), checked) { _, which, isChecked ->
 				checked[which] = isChecked
 			}
-			.setPositiveButton("Apply") { dialog, _ ->
+			.setPositiveButton(R.string.cloud_apply) { dialog, _ ->
 				val selected = tagFilterCategories.filterIndexed { i, _ -> checked[i] }.toSet()
 				// All (or none) selected collapses to the "All games" state.
 				val normalized = if (selected.isEmpty() || selected.size == tagFilterCategories.size)
@@ -489,7 +489,7 @@ class CloudPlayFragment : Fragment()
 				updateFilterSummary()
 				dialog.dismiss()
 			}
-			.setNeutralButton("Show all") { dialog, _ ->
+			.setNeutralButton(R.string.cloud_show_all) { dialog, _ ->
 				viewModel.setTagFilters(emptySet())
 				updateFilterSummary()
 				dialog.dismiss()
@@ -502,7 +502,7 @@ class CloudPlayFragment : Fragment()
 	private fun updateFilterSummary()
 	{
 		val active = viewModel.activeTagFilters
-		binding.filterSummary.text = if (active.isEmpty()) "All games"
+		binding.filterSummary.text = if (active.isEmpty()) getString(R.string.main_cloud_all_games)
 			else tagFilterCategories.filter { it in active }
 				.joinToString(" · ") { tagFilterLabels[tagFilterCategories.indexOf(it)] }
 		val on = active.isNotEmpty()
@@ -561,9 +561,9 @@ class CloudPlayFragment : Fragment()
 
 	private fun showSortMenu()
 	{
-		val sortOptions = arrayOf("Playable First", "Name: A → Z", "Name: Z → A")
+		val sortOptions = arrayOf(getString(R.string.cloud_sort_playable), getString(R.string.cloud_sort_az), getString(R.string.cloud_sort_za))
 		requireContext().alertDialogBuilder()
-			.setTitle("Sort")
+			.setTitle(R.string.cloud_sort)
 			.setSingleChoiceItems(sortOptions, sortState) { dialog, which ->
 				applySortState(which)
 				dialog.dismiss()
@@ -602,9 +602,9 @@ class CloudPlayFragment : Fragment()
 	{
 		expandSettingsFab(false)
 		val popup = androidx.appcompat.widget.PopupMenu(requireContext(), anchor)
-		popup.menu.add(0, 0, 0, "Playable First (Default)")
-		popup.menu.add(0, 1, 1, "Name: A → Z")
-		popup.menu.add(0, 2, 2, "Name: Z → A")
+		popup.menu.add(0, 0, 0, getString(R.string.cloud_sort_playable) + "（默认）")
+		popup.menu.add(0, 1, 1, getString(R.string.cloud_sort_az))
+		popup.menu.add(0, 2, 2, getString(R.string.cloud_sort_za))
 		popup.menu.findItem(sortState)?.isChecked = true
 		popup.menu.setGroupCheckable(0, true, true)
 		popup.setOnMenuItemClickListener { item ->
@@ -626,9 +626,9 @@ class CloudPlayFragment : Fragment()
 	private fun updateSortButtonText()
 	{
 		val text = when (sortState) {
-			1 -> "Sort: A→Z"
-			2 -> "Sort: Z→A"
-			else -> "Sort: Playable"
+			1 -> getString(R.string.cloud_sort_az_short)
+			2 -> getString(R.string.cloud_sort_za_short)
+			else -> getString(R.string.cloud_sort_playable_short)
 		}
 		binding.sortLabelButton.text = text
 	}
@@ -724,7 +724,7 @@ class CloudPlayFragment : Fragment()
 			
 			updateEmptyState(sortedGames.isEmpty())
 			val count = sortedGames.size
-			binding.gameCountText.text = "$count ${if (count == 1) "game" else "games"}"
+			binding.gameCountText.text = getString(R.string.main_cloud_count, count)
 			binding.gameCountText.visibility = if (count > 0) View.VISIBLE else View.GONE
 			
 			// Auto-focus first item after games are loaded, but not while search bar is active
@@ -781,9 +781,9 @@ class CloudPlayFragment : Fragment()
 		if (viewModel.catalogIsForeign.value != true || hasAuthError || isLoading) {
 			binding.regionBanner.visibility = View.GONE
 		} else {
-			val label = region?.takeIf { it.isNotEmpty() } ?: "foreign"
+			val label = region?.takeIf { it.isNotEmpty() } ?: getString(R.string.cloud_region_foreign)
 			binding.regionBanner.text =
-				"PlayStation cloud isn't offered natively in your region — showing the $label catalog. Some titles may not stream."
+				getString(R.string.cloud_region_banner, label)
 			binding.regionBanner.visibility = View.VISIBLE
 		}
 	}
@@ -892,9 +892,9 @@ class CloudPlayFragment : Fragment()
 		{
 			Log.e(TAG, "Missing concept URL for: ${game.name}")
 			requireContext().alertDialogBuilder()
-				.setTitle("Add to Library")
-				.setMessage("Unable to add this game to your library. The game URL is not available.")
-				.setPositiveButton("OK", null)
+				.setTitle(R.string.cloud_add_library)
+				.setMessage(R.string.cloud_add_missing_url)
+				.setPositiveButton(R.string.action_ok, null)
 				.show()
 			return
 		}
@@ -903,12 +903,12 @@ class CloudPlayFragment : Fragment()
 			showAddToLibraryQrDialog(game)
 		} else {
 			requireContext().alertDialogBuilder()
-				.setTitle("Add to Library")
+				.setTitle(R.string.cloud_add_library)
 				.setMessage("This game needs to be added to your library before you can stream it.\n\nAfter adding the game, press the Refresh Games button to update your list.")
-				.setPositiveButton("Add Now") { _, _ ->
+				.setPositiveButton(R.string.cloud_add_now) { _, _ ->
 					openUrlInBrowser(game.conceptUrl)
 				}
-				.setNegativeButton("Cancel", null)
+				.setNegativeButton(R.string.action_cancel, null)
 				.show()
 		}
 	}
@@ -928,7 +928,7 @@ class CloudPlayFragment : Fragment()
 		}
 
 		val message = TextView(ctx).apply {
-			text = "Scan this QR code on your phone or tablet to add \"${game.name}\" to your PlayStation library.\n\nAfter adding the game, press Refresh Games."
+			text = getString(R.string.cloud_qr_instruction, game.name)
 			textSize = 18f
 			setTextColor(Color.WHITE)
 			gravity = Gravity.CENTER
@@ -952,9 +952,9 @@ class CloudPlayFragment : Fragment()
 		val scroll = ScrollView(ctx).apply { addView(layout) }
 
 		ctx.alertDialogBuilder()
-			.setTitle("Add to Library")
+			.setTitle(R.string.cloud_add_library)
 			.setView(scroll)
-			.setPositiveButton("Done", null)
+			.setPositiveButton(R.string.cloud_done, null)
 			.show()
 	}
 
@@ -984,7 +984,7 @@ class CloudPlayFragment : Fragment()
 		catch (e: Exception)
 		{
 			Log.e(TAG, "Failed to open URL: $url", e)
-			android.widget.Toast.makeText(requireContext(), "Failed to open browser", android.widget.Toast.LENGTH_SHORT).show()
+			android.widget.Toast.makeText(requireContext(), getString(R.string.cloud_browser_failed), android.widget.Toast.LENGTH_SHORT).show()
 		}
 	}
 	
@@ -1015,7 +1015,7 @@ class CloudPlayFragment : Fragment()
 			allocationProgressTextView = dialogView.findViewById(R.id.progressTextView)
 			val cancelButton = dialogView.findViewById<com.google.android.material.button.MaterialButton>(R.id.cancelButton)
 			
-			allocationProgressTextView?.text = "Starting allocation..."
+			allocationProgressTextView?.text = getString(R.string.cloud_allocation_start)
 			
 			// Load landscape game image using Coil (for full-screen loading dialog)
 			val imageUrlToLoad = if (game.landscapeImageUrl.isNotEmpty()) {
@@ -1168,7 +1168,7 @@ class CloudPlayFragment : Fragment()
 						else ->
 						{
 							// Generic error
-							showError("Cloud Session Failed", error.message ?: "Unknown error")
+							showError(getString(R.string.cloud_session_failed), error.message ?: getString(R.string.cloud_unknown_error))
 						}
 					}
 				}
@@ -1219,7 +1219,7 @@ class CloudPlayFragment : Fragment()
 					}
 					else ->
 					{
-						showError("Error", e.message ?: "Unknown error")
+						showError(getString(R.string.error), e.message ?: getString(R.string.cloud_unknown_error))
 					}
 				}
 			}
@@ -1233,9 +1233,9 @@ class CloudPlayFragment : Fragment()
 	private fun showPsPlusSubscriptionErrorDialog()
 	{
 		requireContext().alertDialogBuilder()
-			.setTitle("PlayStation Plus Required")
-			.setMessage("You need an active PlayStation Plus Premium subscription to stream games from the cloud, or this service may not be available in your region.")
-			.setPositiveButton("OK", null)
+			.setTitle(R.string.cloud_psplus_required)
+			.setMessage(R.string.cloud_psplus_message)
+			.setPositiveButton(R.string.action_ok, null)
 			.show()
 	}
 	
@@ -1245,9 +1245,9 @@ class CloudPlayFragment : Fragment()
 	private fun showAccountPrivacySettingsErrorDialog(upgradeUrl: String)
 	{
 		requireContext().alertDialogBuilder()
-			.setTitle("Account Settings Update Required")
-			.setMessage("Your account privacy settings need to be updated to use cloud streaming.\n\nUpgrade URL: $upgradeUrl")
-			.setPositiveButton("OK", null)
+			.setTitle(R.string.cloud_account_update)
+			.setMessage(getString(R.string.cloud_account_message, upgradeUrl))
+			.setPositiveButton(R.string.action_ok, null)
 			.show()
 	}
 	
@@ -1257,9 +1257,9 @@ class CloudPlayFragment : Fragment()
 	private fun showPingTimeoutErrorDialog()
 	{
 		requireContext().alertDialogBuilder()
-			.setTitle("Ping Too High")
-			.setMessage("Ping must be less than 80ms to start a cloud session.\n\nTo continue anyway, go to Settings → Cloud and manually select a datacenter for your service (PSNow Catalog).")
-			.setPositiveButton("OK", null)
+			.setTitle(R.string.cloud_ping_high)
+			.setMessage(R.string.cloud_ping_message)
+			.setPositiveButton(R.string.action_ok, null)
 			.show()
 	}
 	
@@ -1269,9 +1269,9 @@ class CloudPlayFragment : Fragment()
 	private fun showAuthorizationFailedDialog()
 	{
 		requireContext().alertDialogBuilder()
-			.setTitle("Authorization Failed")
-			.setMessage("Failed to authorize your PlayStation Network account. Please check your NPSSO token and try again.")
-			.setPositiveButton("OK", null)
+			.setTitle(R.string.cloud_auth_failed)
+			.setMessage(R.string.cloud_auth_message)
+			.setPositiveButton(R.string.action_ok, null)
 			.show()
 	}
 	
@@ -1283,7 +1283,7 @@ class CloudPlayFragment : Fragment()
 		requireContext().alertDialogBuilder()
 			.setTitle(title)
 			.setMessage(message)
-			.setPositiveButton("OK", null)
+			.setPositiveButton(R.string.action_ok, null)
 			.show()
 	}
 	

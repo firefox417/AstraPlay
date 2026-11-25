@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitCenter"
-            android:contentDescription="Game cover image" />
+            android:contentDescription="@string/main_cloud_game_cover" />
 
         <ProgressBar
             android:id="@+id/loadingSpinner"
@@ -38,7 +38,7 @@
             android:padding="4dp"
             android:src="@drawable/ic_star_outline"
             android:background="@android:color/transparent"
-            android:contentDescription="Favorite"
+            android:contentDescription="@string/main_cloud_favorite"
             android:clickable="false"
             android:focusable="false"
             android:scaleType="fitCenter" />
@@ -53,7 +53,7 @@
             android:paddingEnd="6dp"
             android:paddingTop="2dp"
             android:paddingBottom="2dp"
-            android:text="Owned"
+            android:text="@string/main_cloud_badge_owned"
             android:textSize="9sp"
             android:textStyle="bold"
             android:textColor="#FFFFFF"

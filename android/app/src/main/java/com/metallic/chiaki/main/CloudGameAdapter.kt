@@ -198,15 +198,15 @@ class CloudGameAdapter(
 				binding.ownershipBadge.visibility = android.view.View.VISIBLE
 				when (category) {
 					"owned" -> {
-						binding.ownershipBadge.text = "Owned"
+						binding.ownershipBadge.text = binding.root.context.getString(R.string.main_cloud_badge_owned)
 						binding.ownershipBadge.setBackgroundColor(0xCC4CAF50.toInt())
 					}
 					"streamable" -> {
-						binding.ownershipBadge.text = "Streamable"
+						binding.ownershipBadge.text = binding.root.context.getString(R.string.main_cloud_badge_streamable)
 						binding.ownershipBadge.setBackgroundColor(0xCC2196F3.toInt())
 					}
 					else -> {
-						binding.ownershipBadge.text = "Add Game"
+						binding.ownershipBadge.text = binding.root.context.getString(R.string.main_cloud_badge_add)
 						binding.ownershipBadge.setBackgroundColor(0xCCFF9800.toInt())
 					}
 				}
