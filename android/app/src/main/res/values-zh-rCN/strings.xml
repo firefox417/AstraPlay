@@ -545,4 +545,5 @@
     <string name="main_host_ready">就绪</string>
     <string name="main_host_standby">待机</string>
     <string name="main_host_mac">MAC：%1$s</string>
+    <string name="main_remote_login_add">登录以添加主机</string>
 </resources>
