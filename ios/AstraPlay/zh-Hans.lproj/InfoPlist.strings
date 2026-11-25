@@ -1,0 +1,4 @@
+/* Simplified Chinese system permission prompts and app display name */
+"CFBundleDisplayName" = "AstraPlay";
+"NSLocalNetworkUsageDescription" = "AstraPlay 需要访问本地网络，以发现并连接家庭网络中的 PlayStation 主机。";
+"NSMicrophoneUsageDescription" = "AstraPlay 需要访问麦克风，以支持语音聊天和麦克风功能。";
