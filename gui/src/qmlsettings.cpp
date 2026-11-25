@@ -31,6 +31,21 @@ QmlSettings::QmlSettings(Settings *settings, QObject *parent)
     connect(settings, &Settings::CloudDatacentersJsonPSNOWChanged, this, &QmlSettings::cloudDatacentersJsonPSNOWChanged);
 }
 
+QString QmlSettings::interfaceLanguage() const
+{
+    return settings->GetInterfaceLanguage();
+}
+
+void QmlSettings::setInterfaceLanguage(const QString &language)
+{
+    if (language != QStringLiteral("system") && language != QStringLiteral("en") && language != QStringLiteral("zh_CN"))
+        return;
+    if (settings->GetInterfaceLanguage() == language)
+        return;
+    settings->SetInterfaceLanguage(language);
+    emit interfaceLanguageChanged();
+}
+
 bool QmlSettings::remotePlayAsk() const
 {
     return settings->GetRemotePlayAsk();
