@@ -531,4 +531,5 @@
     <string name="main_host_ready">Ready</string>
     <string name="main_host_standby">Standby</string>
     <string name="main_host_mac">MAC: %1$s</string>
+    <string name="main_remote_login_add">Login to Add Consoles</string>
 </resources>
