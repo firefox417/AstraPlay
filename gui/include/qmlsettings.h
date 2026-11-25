@@ -5,6 +5,7 @@
 class QmlSettings : public QObject
 {
     Q_OBJECT
+    Q_PROPERTY(QString interfaceLanguage READ interfaceLanguage WRITE setInterfaceLanguage NOTIFY interfaceLanguageChanged)
     Q_PROPERTY(bool remotePlayAsk READ remotePlayAsk WRITE setRemotePlayAsk NOTIFY remotePlayAskChanged)
     Q_PROPERTY(bool addSteamShortcutAsk READ addSteamShortcutAsk WRITE setAddSteamShortcutAsk NOTIFY addSteamShortcutAskChanged)
     Q_PROPERTY(bool setupGuideShown READ setupGuideShown WRITE setSetupGuideShown NOTIFY setupGuideShownChanged)
@@ -182,6 +183,9 @@ class QmlSettings : public QObject
 
 public:
     QmlSettings(Settings *settings, QObject *parent = nullptr);
+
+    QString interfaceLanguage() const;
+    void setInterfaceLanguage(const QString &language);
 
     int resolutionLocalPS4() const;
     void setResolutionLocalPS4(int resolution);
@@ -675,6 +679,7 @@ public:
     Q_INVOKABLE QStringList cloudSupportedLanguages() const;
 
 signals:
+    void interfaceLanguageChanged();
     void resolutionLocalPS4Changed();
     void resolutionRemotePS4Changed();
     void resolutionLocalPS5Changed();
