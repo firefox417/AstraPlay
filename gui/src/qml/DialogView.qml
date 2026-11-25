@@ -163,7 +163,7 @@ Item {
                     }
                     Label {
                         width: parent.width
-                        text: "Remote Play Client"
+                        text: qsTr("Remote Play Client")
                         font.pixelSize: 10
                         font.weight: Font.Light
                         color: Qt.rgba(255, 255, 255, 0.7)
