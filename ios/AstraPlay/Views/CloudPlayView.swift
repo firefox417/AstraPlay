@@ -36,7 +36,7 @@ final class CloudPlayViewModel: ObservableObject {
         CloudCategory.streamable,
         CloudCategory.purchaseable
     ]
-    static let tagFilterLabels = ["Owned", "Streamable", "Store"]
+    static let tagFilterLabels = ["Owned", "Streamable", "Store"].map { NSLocalizedString($0, comment: "Cloud game filter") }
 
     enum SortOrder: Int, CaseIterable {
         case defaultOrder = 0  // Playable First
@@ -45,7 +45,7 @@ final class CloudPlayViewModel: ObservableObject {
 
         var label: String {
             switch self {
-            case .defaultOrder: return "Playable First"
+            case .defaultOrder: return NSLocalizedString("Playable First", comment: "Cloud game sort order")
             case .nameAsc:      return "Name: A \u{2192} Z"
             case .nameDesc:     return "Name: Z \u{2192} A"
             }
@@ -88,7 +88,7 @@ final class CloudPlayViewModel: ObservableObject {
     }
 
     var filterSummary: String {
-        if activeTagFilters.isEmpty { return "All games" }
+        if activeTagFilters.isEmpty { return NSLocalizedString("All games", comment: "Cloud game filter summary") }
         return Self.tagFilterCategories
             .filter { activeTagFilters.contains($0) }
             .map { tag in
@@ -183,7 +183,7 @@ final class CloudPlayViewModel: ObservableObject {
         if let fetchError = catalogService.lastLibraryFetchError {
             error = fetchError
         } else if loadedGames.isEmpty {
-            error = "No cloud games found. Check your connection."
+            error = NSLocalizedString("No cloud games found. Check your connection.", comment: "Cloud catalog error")
         }
         if let catalogWarning = catalogService.lastCatalogFetchWarning {
             warning = catalogWarning
@@ -218,7 +218,7 @@ final class CloudPlayViewModel: ObservableObject {
 
     func startCloudStreaming(game: CloudGame, npssoToken: String) {
         allocating = true
-        allocationProgress = "Starting..."
+        allocationProgress = NSLocalizedString("Starting...", comment: "Cloud stream startup status")
         allocationError = nil
         showPingTooHighDialog = false
         cloudSession = nil
