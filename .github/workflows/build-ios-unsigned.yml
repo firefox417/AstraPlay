@@ -1,0 +1,148 @@
+name: Build iOS (unsigned artifacts)
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - Chinese
+    paths:
+      - "ios/**"
+      - "lib/**"
+      - "third-party/**"
+      - "CMakeLists.txt"
+      - ".github/workflows/build-ios-unsigned.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-ios-unsigned-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build unsigned iOS apps
+    runs-on: macos-26
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          submodules: recursive
+
+      - name: Extract version
+        id: version
+        uses: ./.github/actions/extract-version
+
+      - name: Install build dependencies
+        run: |
+          brew install cmake ninja protobuf@29 python-setuptools
+          pip3 install --user --break-system-packages 'protobuf>=5,<6'
+          echo "$(brew --prefix)/opt/protobuf@29/bin" >> "$GITHUB_PATH"
+
+      - name: Download iOS toolchain
+        working-directory: ios
+        run: |
+          curl -fL --retry 3 -o ios.toolchain.cmake \
+            https://raw.githubusercontent.com/leetal/ios-cmake/master/ios.toolchain.cmake
+
+      - name: Build iOS device library
+        working-directory: ios
+        run: |
+          cmake -S . -B build-iphoneos -G Ninja \
+            -DCMAKE_TOOLCHAIN_FILE=ios.toolchain.cmake \
+            -DPLATFORM=OS64 \
+            -DCMAKE_BUILD_TYPE=Release \
+            -DUSE_LIBIDN2=OFF \
+            -DCURL_USE_LIBPSL=OFF \
+            -DUSE_NGHTTP2=OFF \
+            -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+          cmake --build build-iphoneos --config Release --target chiaki-lib
+          find build-iphoneos -name "*.a" -print0 | \
+            xargs -0 libtool -static -o build-iphoneos/libchiaki_complete.a
+
+      - name: Build iOS Simulator library
+        working-directory: ios
+        run: |
+          cmake -S . -B build-iphonesimulator -G Ninja \
+            -DCMAKE_TOOLCHAIN_FILE=ios.toolchain.cmake \
+            -DPLATFORM=SIMULATORARM64 \
+            -DCMAKE_BUILD_TYPE=Release \
+            -DUSE_LIBIDN2=OFF \
+            -DCURL_USE_LIBPSL=OFF \
+            -DUSE_NGHTTP2=OFF \
+            -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+          cmake --build build-iphonesimulator --config Release --target chiaki-lib
+          find build-iphonesimulator -name "*.a" -print0 | \
+            xargs -0 libtool -static -o build-iphonesimulator/libchiaki_complete.a
+
+      - name: Build unsigned iPhone/iPad app
+        working-directory: ios
+        env:
+          ASTRAPLAY_RELAY_URL: ${{ secrets.ASTRAPLAY_RELAY_URL }}
+        run: |
+          xcodebuild -project AstraPlay.xcodeproj \
+            -scheme AstraPlay \
+            -sdk iphoneos \
+            -configuration Release build \
+            -destination 'generic/platform=iOS' \
+            -derivedDataPath build-derived-device \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            MARKETING_VERSION="${{ steps.version.outputs.version }}" \
+            CURRENT_PROJECT_VERSION="${{ steps.version.outputs.semver_build_id }}"
+
+      - name: Package unsigned device app as IPA-shaped archive
+        working-directory: ios
+        run: |
+          APP="build-derived-device/Build/Products/Release-iphoneos/AstraPlay.app"
+          test -d "$APP"
+          mkdir -p unsigned-device/Payload
+          ditto "$APP" unsigned-device/Payload/AstraPlay.app
+          (cd unsigned-device && /usr/bin/zip -qry "../AstraPlay-iOS-unsigned.ipa" Payload)
+          ditto "$APP" "../AstraPlay-iOS-device-unsigned.app"
+
+      - name: Build unsigned iOS Simulator app
+        working-directory: ios
+        env:
+          ASTRAPLAY_RELAY_URL: ${{ secrets.ASTRAPLAY_RELAY_URL }}
+        run: |
+          xcodebuild -project AstraPlay.xcodeproj \
+            -scheme AstraPlay \
+            -sdk iphonesimulator \
+            -configuration Debug build \
+            -destination 'generic/platform=iOS Simulator' \
+            -derivedDataPath build-derived-simulator \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            ARCHS=arm64
+
+      - name: Package simulator app
+        working-directory: ios
+        run: |
+          APP="build-derived-simulator/Build/Products/Debug-iphonesimulator/AstraPlay.app"
+          test -d "$APP"
+          ditto -c -k --sequesterRsrc --keepParent "$APP" "../AstraPlay-iOS-Simulator-unsigned.zip"
+
+      - name: Upload unsigned iOS artifacts
+        uses: actions/upload-artifact@v7
+        with:
+          name: AstraPlay-iOS-unsigned-${{ steps.version.outputs.version }}-${{ github.sha }}
+          path: |
+            AstraPlay-iOS-unsigned.ipa
+            AstraPlay-iOS-device-unsigned.app
+            AstraPlay-iOS-Simulator-unsigned.zip
+          retention-days: 14
+          if-no-files-found: error
+
+      - name: Build summary
+        if: always()
+        run: |
+          {
+            echo "## AstraPlay iOS unsigned build"
+            echo ""
+            echo "- Device app: unsigned .app / IPA-shaped archive (requires signing before installing on a physical iPhone/iPad)."
+            echo "- Simulator app: unsigned .app ZIP for iOS Simulator."
+            echo "- No Apple Developer account, certificate, or provisioning profile is used."
+          } >> "$GITHUB_STEP_SUMMARY"
