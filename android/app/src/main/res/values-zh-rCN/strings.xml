@@ -534,4 +534,15 @@
     <string name="cloud_auth_message">PlayStation Network 账户授权失败。请检查 NPSSO 令牌后重试。</string>
     <string name="cloud_region_banner">PlayStation 云游戏暂未在你所在地区提供本地服务，当前显示 %1$s 游戏目录。部分游戏可能无法串流。</string>
     <string name="cloud_region_foreign">其他地区</string>
+
+    <!-- Main list cards -->
+    <string name="main_cloud_badge_owned">已拥有</string>
+    <string name="main_cloud_badge_streamable">可串流</string>
+    <string name="main_cloud_badge_add">添加游戏</string>
+    <string name="main_cloud_game_cover">游戏封面</string>
+    <string name="main_cloud_favorite">收藏</string>
+    <string name="main_host_remote">远程主机</string>
+    <string name="main_host_ready">就绪</string>
+    <string name="main_host_standby">待机</string>
+    <string name="main_host_mac">MAC：%1$s</string>
 </resources>
