@@ -7,7 +7,7 @@ if(APPLE)
 	enable_language(OBJCXX)
 endif()
 
-find_package(Qt6 REQUIRED COMPONENTS Core Gui Concurrent Svg Qml Quick Widgets Network)
+find_package(Qt6 REQUIRED COMPONENTS Core Gui Concurrent Svg Qml Quick Widgets Network LinguistTools)
 if(Qt6_VERSION VERSION_GREATER_EQUAL "6.10.0")
 	find_package(Qt6 REQUIRED COMPONENTS GuiPrivate)
 endif()
@@ -142,6 +142,13 @@ add_executable(astraplay
 		${RESOURCE_FILES}
 		${SOURCE_FILES}
 )
+# Compile Qt Linguist catalogs into the application resources so translations are
+# available in packaged macOS, Windows, and Linux builds without sidecar files.
+qt_add_translations(astraplay
+	TS_FILES translations/astraplay_zh_CN.ts
+	RESOURCE_PREFIX "/i18n"
+)
+
 target_include_directories(astraplay PRIVATE include thirdparty)
 
 add_library(placebo-libav-impl src/libav_impl.c)
