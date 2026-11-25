@@ -12,6 +12,8 @@ int main(int argc, char *argv[]) { return real_main(argc, argv); }
 #include <qmlbackend.h>
 #include <cloudstreamingbackend.h>
 #include <QApplication>
+#include <QLocale>
+#include <QTranslator>
 #include <QMessageBox>
 #include <QStyleHints>
 #ifdef CHIAKI_ENABLE_STEAMWORKS
@@ -145,6 +147,16 @@ int real_main(int argc, char *argv[])
 	QtWebEngineQuick::initialize();
 #endif
 	QApplication app(argc, argv);
+
+	// Load the bundled Simplified Chinese translation when the system UI language is Chinese.
+	// The translator is kept alive for the entire application lifetime.
+	QTranslator zhTranslator;
+	const QLocale systemLocale;
+	if(systemLocale.language() == QLocale::Chinese &&
+	   zhTranslator.load(QStringLiteral(":/i18n/astraplay_zh_CN.qm")))
+	{
+		app.installTranslator(&zhTranslator);
+	}
 
 	// Controller/keyboard navigation moves focus with nextItemInFocusChain().
 	// On macOS the platform default (Full Keyboard Access off) excludes
