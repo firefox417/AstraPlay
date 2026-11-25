@@ -49,6 +49,8 @@
 <message><source>Console Discovery</source><translation>主机发现</translation></message>
 <message><source>Quit</source><translation>退出</translation></message>
 <message><source>Are you sure you want to quit?</source><translation>确定要退出吗？</translation></message>
+<message><source>Login</source><translation>登录</translation></message>
+<message><source>Settings</source><translation>设置</translation></message>
 </context>
 <context>
 <name>CloudPlayView</name>
@@ -106,13 +108,42 @@
 <message><source>Restricted Scene Active</source><translation>受限场景已启用</translation></message>
 <message><source>Show Info</source><translation>显示信息</translation></message>
 <message><source>Go Home</source><translation>返回主页</translation></message>
-<message><source>Disconnect Session</source><translation>断开串流会话</translation></message>
+<message><source>Disconnect Session</source><translation>断开会话</translation></message>
 <message><source>Are you sure you want to close the session?</source><translation>确定要关闭当前会话吗？</translation></message>
 <message><source>Do you want the Console to go into sleep mode?</source><translation>是否让主机进入休眠模式？</translation></message>
 <message><source>Yes</source><translation>是</translation></message>
 <message><source>Sleep</source><translation>休眠</translation></message>
 <message><source>No</source><translation>否</translation></message>
 <message><source>Console Login PIN</source><translation>主机登录 PIN 码</translation></message>
+<message><source>You have disabled audio and video in your settings.\nTo re-enable change Audio/Video to Audio and Video Enabled in the General tab of the settings.</source><translation>你已在设置中禁用音频和视频。\n如需重新启用，请前往设置的“常规”选项卡，将“音频/视频”更改为“启用音频和视频”。</translation></message>
+<message><source>You have disabled video in your settings.\nTo re-enable change Audio/Video to Audio and Video Enabled in the General tab of the settings.</source><translation>你已在设置中禁用视频。\n如需重新启用，请前往设置的“常规”选项卡，将“音频/视频”更改为“启用音频和视频”。</translation></message>
+<message><source>The PlayStation console paused video transmission because this screen contains protected content (e.g. initial 2K account login, EULA agreements, or copyright-licensed music).</source><translation>PlayStation 主机已暂停视频传输，因为当前画面包含受保护内容（例如首次登录 2K 账户、最终用户许可协议或受版权保护的音乐）。</translation></message>
+<message><source>💡 Controller inputs remain active! If an introductory EULA or account prompt is pending, press Cross (X) or Circle (O) on your controller to accept/skip it. The video stream will resume automatically.</source><translation>💡 手柄输入仍然有效！如果屏幕上正在等待确认许可协议或账户提示，请按手柄上的叉键（×）或圆键（○）接受/跳过，视频串流将自动恢复。</translation></message>
+<message><source>packet loss</source><translation>丢包</translation></message>
+<message><source>dropped frames</source><translation>丢帧</translation></message>
+<message><source>fps</source><translation>帧/秒</translation></message>
+<message><source>ms rtt</source><translation>毫秒 RTT</translation></message>
+<message><source>res</source><translation>分辨率</translation></message>
+<message><source>ctrl bat</source><translation>手柄电量</translation></message>
+<message><source>% Volume</source><translation>% 音量</translation></message>
+<message><source>Mic</source><translation>麦克风</translation></message>
+<message><source>16:10 Fill</source><translation>16:10 填充</translation></message>
+<message><source>Custom Zoom</source><translation>自定义缩放</translation></message>
+<message><source>No Black Bars</source><translation>无黑边</translation></message>
+<message><source> x</source><translation> x</translation></message>
+<message><source>Stretch</source><translation>拉伸</translation></message>
+<message><source>Sharp (CAS)</source><translation>锐利（CAS）</translation></message>
+<message><source>Soft / Custom</source><translation>柔和 / 自定义</translation></message>
+<message><source>Sharp (HQ)</source><translation>锐利（高质量）</translation></message>
+<message><source>Sharpen: Off</source><translation>锐化：关闭</translation></message>
+<message><source>Default</source><translation>默认</translation></message>
+<message><source>High Quality</source><translation>高质量</translation></message>
+<message><source>Custom</source><translation>自定义</translation></message>
+<message><source>Display</source><translation>显示</translation></message>
+<message><source>Placebo</source><translation>Placebo</translation></message>
+<message><source>Stats</source><translation>统计信息</translation></message>
+<message><source>Connected to &lt;b&gt;%1&lt;/b&gt;</source><translation>已连接到 &lt;b&gt;%1&lt;/b&gt;</translation></message>
+<message><source>Connecting to &lt;b&gt;%1&lt;/b&gt;</source><translation>正在连接到 &lt;b&gt;%1&lt;/b&gt;</translation></message>
 </context>
 <context>
 <name>DisplaySettingsDialog</name>
@@ -221,6 +252,53 @@
 <message><source>High Quality</source><translation>高质量</translation></message>
 <message><source>Color Mapping Enabled:</source><translation>启用色彩映射：</translation></message>
 <message><source>Use Color Mapping Settings</source><translation>使用色彩映射设置</translation></message>
+<message><source>* Defaults in () to right of value or marked with (Default)</source><translation>* 数值右侧括号内或标注（默认）的为默认值</translation></message>
+<message><source>EwaLanczos</source><translation>EwaLanczos</translation></message>
+<message><source>EwaLanczosSharp</source><translation>EwaLanczosSharp</translation></message>
+<message><source>EwaLanczosSharpest</source><translation>EwaLanczosSharpest</translation></message>
+<message><source>(EwaLanczosSharp)</source><translation>（EwaLanczosSharp）</translation></message>
+<message><source>Plane Upscaler:</source><translation>平面升频算法：</translation></message>
+<message><source>Chosen Upscaler</source><translation>已选升频算法</translation></message>
+<message><source>(Chosen Upscaler)</source><translation>（已选升频算法）</translation></message>
+<message><source>Box</source><translation>Box</translation></message>
+<message><source>Hermite</source><translation>Hermite</translation></message>
+<message><source>Mitchell</source><translation>Mitchell</translation></message>
+<message><source>(Hermite)</source><translation>（Hermite）</translation></message>
+<message><source>Plane Downscaler:</source><translation>平面降频算法：</translation></message>
+<message><source>Chosen Downscaler</source><translation>已选降频算法</translation></message>
+<message><source>(Oversample)</source><translation>（过采样）</translation></message>
+<message><source>(0.00)</source><translation>（0.00）</translation></message>
+<message><source>(Checked)</source><translation>（已勾选）</translation></message>
+<message><source>Default</source><translation>默认</translation></message>
+<message><source>(Custom)</source><translation>（自定义）</translation></message>
+<message><source>%1</source><translation>%1</translation></message>
+<message><source>(1)</source><translation>（1）</translation></message>
+<message><source>(3.0)</source><translation>（3.0）</translation></message>
+<message><source>(16.0)</source><translation>（16.0）</translation></message>
+<message><source>(4.0)</source><translation>（4.0）</translation></message>
+<message><source>Sigmoid Preset:</source><translation>Sigmoid 预设：</translation></message>
+<message><source>Sigmoid Center:</source><translation>Sigmoid 中心：</translation></message>
+<message><source>(0.75)</source><translation>（0.75）</translation></message>
+<message><source>Sigmoid Slope:</source><translation>Sigmoid 斜率：</translation></message>
+<message><source>(6.5)</source><translation>（6.5）</translation></message>
+<message><source>Color Adjustment Preset:</source><translation>颜色调整预设：</translation></message>
+<message><source>Neutral</source><translation>中性</translation></message>
+<message><source>(1.0)</source><translation>（1.0）</translation></message>
+<message><source>(0.000)</source><translation>（0.000）</translation></message>
+<message><source>(High Quality)</source><translation>（高质量）</translation></message>
+<message><source>Peak Smoothing Period:</source><translation>峰值平滑周期：</translation></message>
+<message><source>(20.0)</source><translation>（20.0）</translation></message>
+<message><source>Scene Threshold Low:</source><translation>场景阈值下限：</translation></message>
+<message><source>Scene Threshold High:</source><translation>场景阈值上限：</translation></message>
+<message><source>Peak Percentile:</source><translation>峰值百分位：</translation></message>
+<message><source>(99.995)</source><translation>（99.995）</translation></message>
+<message><source>Black Cutoff:</source><translation>黑场截止：</translation></message>
+<message><source>Allow Delayed Peak:</source><translation>允许延迟峰值：</translation></message>
+<message><source>Enable 1-Frame Delayed Peak</source><translation>启用 1 帧延迟峰值</translation></message>
+<message><source>(Unchecked)</source><translation>（未勾选）</translation></message>
+<message><source>Color Mapping Preset:</source><translation>色彩映射预设：</translation></message>
+<message><source>Color Mapping Settings:</source><translation>色彩映射设置：</translation></message>
+<message><source>Open</source><translation>打开</translation></message>
 </context>
 <context>
 <name>Main</name>
@@ -749,5 +827,93 @@ To continue anyway, go to Settings → Cloud and manually select a datacenter fo
 <context>
 <name>MessageDialog</name>
 <message><source>OK</source><translation>确定</translation></message>
+</context>
+<context>
+<name>PlaceboColorMappingDialog</name>
+<message><source>Color Mapping Settings</source><translation>色彩映射设置</translation></message>
+<message><source>* Defaults in () to right of value or marked with (Default)</source><translation>* 数值右侧括号内或标注（默认）的为默认值</translation></message>
+<message><source>Gamut Mapping 1</source><translation>色域映射 1</translation></message>
+<message><source>Gamut Mapping 2</source><translation>色域映射 2</translation></message>
+<message><source>Tone-mapping 1</source><translation>色调映射 1</translation></message>
+<message><source>Tone-mapping 2</source><translation>色调映射 2</translation></message>
+<message><source>Tone-mapping 3</source><translation>色调映射 3</translation></message>
+<message><source>Gamut Mapping Function:</source><translation>色域映射函数：</translation></message>
+<message><source>Clip</source><translation>裁切</translation></message>
+<message><source>Perceptual</source><translation>感知</translation></message>
+<message><source>Soft Clip</source><translation>柔和裁切</translation></message>
+<message><source>Relative</source><translation>相对</translation></message>
+<message><source>Saturation</source><translation>饱和度</translation></message>
+<message><source>Absolute</source><translation>绝对</translation></message>
+<message><source>Desaturate</source><translation>降低饱和度</translation></message>
+<message><source>Darken</source><translation>变暗</translation></message>
+<message><source>Highlight</source><translation>高光</translation></message>
+<message><source>Linear</source><translation>线性</translation></message>
+<message><source>(Perceptual)</source><translation>（感知）</translation></message>
+<message><source>Perceptual Deadzone:</source><translation>感知死区：</translation></message>
+<message><source>(0.30)</source><translation>（0.30）</translation></message>
+<message><source>Perceptual Strength:</source><translation>感知强度：</translation></message>
+<message><source>(0.80)</source><translation>（0.80）</translation></message>
+<message><source>Colorimetric Gamma:</source><translation>色度伽马：</translation></message>
+<message><source>(1.80)</source><translation>（1.80）</translation></message>
+<message><source>Soft Clip Knee:</source><translation>柔和裁切拐点：</translation></message>
+<message><source>(0.70)</source><translation>（0.70）</translation></message>
+<message><source>Soft Clip Desaturation:</source><translation>柔和裁切去饱和度：</translation></message>
+<message><source>(0.35)</source><translation>（0.35）</translation></message>
+<message><source>LUT 3D Size I:</source><translation>3D LUT I 轴尺寸：</translation></message>
+<message><source>%1</source><translation>%1</translation></message>
+<message><source>(48)</source><translation>（48）</translation></message>
+<message><source>LUT 3D Size C:</source><translation>3D LUT C 轴尺寸：</translation></message>
+<message><source>(32)</source><translation>（32）</translation></message>
+<message><source>LUT 3D Size h:</source><translation>3D LUT h 轴尺寸：</translation></message>
+<message><source>(256)</source><translation>（256）</translation></message>
+<message><source>LUT 3D Tricubic Enabled:</source><translation>启用 3D LUT 三次插值：</translation></message>
+<message><source>Enable Tricubic Interpolation for 3DLUTs</source><translation>为 3D LUT 启用三次插值</translation></message>
+<message><source>(Unchecked)</source><translation>（未勾选）</translation></message>
+<message><source>Gamut Expansion Enabled:</source><translation>启用色域扩展：</translation></message>
+<message><source>Enable Gamut Expansion</source><translation>启用色域扩展</translation></message>
+<message><source>Tone-mapping Function:</source><translation>色调映射函数：</translation></message>
+<message><source>Spline</source><translation>样条曲线</translation></message>
+<message><source>St2094-40</source><translation>St2094-40</translation></message>
+<message><source>St-2094-10</source><translation>St-2094-10</translation></message>
+<message><source>Bt2390</source><translation>Bt2390</translation></message>
+<message><source>Bt2446a</source><translation>Bt2446a</translation></message>
+<message><source>Reinhard</source><translation>Reinhard</translation></message>
+<message><source>Mobius</source><translation>Mobius</translation></message>
+<message><source>Hable</source><translation>Hable</translation></message>
+<message><source>Gamma</source><translation>伽马</translation></message>
+<message><source>Linear Light</source><translation>线性光</translation></message>
+<message><source>(Spline)</source><translation>（样条曲线）</translation></message>
+<message><source>Knee Adaptation:</source><translation>拐点自适应：</translation></message>
+<message><source>(0.40)</source><translation>（0.40）</translation></message>
+<message><source>Knee Minimum:</source><translation>拐点最小值：</translation></message>
+<message><source>(0.10)</source><translation>（0.10）</translation></message>
+<message><source>Knee Maximum:</source><translation>拐点最大值：</translation></message>
+<message><source>Knee Default:</source><translation>默认拐点：</translation></message>
+<message><source>Knee Offset:</source><translation>拐点偏移：</translation></message>
+<message><source>(1.00)</source><translation>（1.00）</translation></message>
+<message><source>Slope Tuning:</source><translation>斜率调整：</translation></message>
+<message><source>(1.5)</source><translation>（1.5）</translation></message>
+<message><source>Slope Offset:</source><translation>斜率偏移：</translation></message>
+<message><source>(0.20)</source><translation>（0.20）</translation></message>
+<message><source>Spline Contrast:</source><translation>样条曲线对比度：</translation></message>
+<message><source>(0.50)</source><translation>（0.50）</translation></message>
+<message><source>Reinhard Contrast:</source><translation>Reinhard 对比度：</translation></message>
+<message><source>Linear Knee:</source><translation>线性拐点：</translation></message>
+<message><source>(0.3)</source><translation>（0.3）</translation></message>
+<message><source>Exposure:</source><translation>曝光：</translation></message>
+<message><source>(1.0)</source><translation>（1.0）</translation></message>
+<message><source>Inverse Tone-mapping Enabled:</source><translation>启用反向色调映射：</translation></message>
+<message><source>Enable Inverse Tone-mapping</source><translation>启用反向色调映射</translation></message>
+<message><source>Tone-mapping Metadata:</source><translation>色调映射元数据：</translation></message>
+<message><source>Any</source><translation>任意</translation></message>
+<message><source>None</source><translation>无</translation></message>
+<message><source>HDR10</source><translation>HDR10</translation></message>
+<message><source>HDR10 Plus</source><translation>HDR10+</translation></message>
+<message><source>Cie_y</source><translation>CIE y</translation></message>
+<message><source>(Any)</source><translation>（任意）</translation></message>
+<message><source>Tone LUT Size:</source><translation>色调 LUT 尺寸：</translation></message>
+<message><source>Contrast Recovery:</source><translation>对比度恢复：</translation></message>
+<message><source>Contrast Smoothness:</source><translation>对比度平滑度：</translation></message>
+<message><source>(3.5)</source><translation>（3.5）</translation></message>
 </context>
 </TS>
