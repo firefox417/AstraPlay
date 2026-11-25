@@ -148,16 +148,6 @@ int real_main(int argc, char *argv[])
 #endif
 	QApplication app(argc, argv);
 
-	// Load the bundled Simplified Chinese translation when the system UI language is Chinese.
-	// The translator is kept alive for the entire application lifetime.
-	QTranslator zhTranslator;
-	const QLocale systemLocale;
-	if(systemLocale.language() == QLocale::Chinese &&
-	   zhTranslator.load(QStringLiteral(":/i18n/astraplay_zh_CN.qm")))
-	{
-		app.installTranslator(&zhTranslator);
-	}
-
 	// Controller/keyboard navigation moves focus with nextItemInFocusChain().
 	// On macOS the platform default (Full Keyboard Access off) excludes
 	// non-editable controls (combo boxes, checkboxes, sliders) from that chain,
@@ -239,6 +229,15 @@ int real_main(int argc, char *argv[])
 	QStringList args = parser.positionalArguments();
 
 	Settings settings(parser.isSet(profile_option) ? parser.value(profile_option) : QString());
+
+	// Load the selected interface language before any QML views are created.
+	// The preference is persisted in the normal AstraPlay settings file.
+	QTranslator zhTranslator;
+	const QString interfaceLanguage = settings.GetInterfaceLanguage();
+	const bool useChinese = interfaceLanguage == QStringLiteral("zh_CN") ||
+		(interfaceLanguage == QStringLiteral("system") && QLocale().language() == QLocale::Chinese);
+	if(useChinese && zhTranslator.load(QStringLiteral(":/i18n/astraplay_zh_CN.qm")))
+		app.installTranslator(&zhTranslator);
 	bool exit_app_on_stream_exit = parser.isSet(stream_exit_option);
 	if(parser.isSet(profile_option))
 		settings.SetCurrentProfile(parser.value(profile_option));
