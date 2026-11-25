@@ -58,6 +58,7 @@
 		A5000011 /* agpl_license.txt in Resources */ = {isa = PBXBuildFile; fileRef = A5000001 /* agpl_license.txt */; };
 		A5000012 /* disclaimer.txt in Resources */ = {isa = PBXBuildFile; fileRef = A5000002 /* disclaimer.txt */; };
 		A5000013 /* LicenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5000003 /* LicenseView.swift */; };
+		A7000001 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7000002 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,6 +126,7 @@
 		A5000002 /* disclaimer.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = disclaimer.txt; path = ../gui/res/license/disclaimer.txt; sourceTree = SOURCE_ROOT; };
 		A5000003 /* LicenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseView.swift; sourceTree = "<group>"; };
 		A6000001 /* AppReviewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReviewHelper.swift; sourceTree = "<group>"; };
+		A7000002 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text; name = Localizable.strings; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 				A2000005 /* Views */,
 				A1000014 /* Assets.xcassets */,
 				A1000015 /* AstraPlay.entitlements */,
+				A7000002 /* Localizable.strings */,
 				A5000001 /* agpl_license.txt */,
 				A5000002 /* disclaimer.txt */,
 			);
@@ -306,6 +309,7 @@
 			knownRegions = (
 				en,
 				Base,
+				zh-Hans,
 			);
 			mainGroup = A1000030;
 			productRefGroup = A1000033 /* Products */;
@@ -325,6 +329,7 @@
 				A1000004 /* Assets.xcassets in Resources */,
 				A5000011 /* agpl_license.txt in Resources */,
 				A5000012 /* disclaimer.txt in Resources */,
+				A7000001 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
