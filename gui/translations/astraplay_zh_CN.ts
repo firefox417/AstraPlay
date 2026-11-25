@@ -631,6 +631,7 @@ To continue anyway, go to Settings → Cloud and manually select a datacenter fo
 <message><source>and L3 + R3</source><translation>以及 L3 + R3</translation></message>
 <message><source>To open Stream Menu</source><translation>打开串流菜单</translation></message>
 <message><source>Dismiss (B)</source><translation>关闭（B）</translation></message>
+<message><source>(bumper)</source><translation>（肩键）</translation></message>
 </context>
 <context>
 <name>GameShortcutDialog</name>
@@ -978,5 +979,9 @@ To continue anyway, go to Settings → Cloud and manually select a datacenter fo
 <message><source>Launch Game</source><translation>启动游戏</translation></message>
 <message><source>Shortcut</source><translation>快捷方式</translation></message>
 <message><source>Trophies</source><translation>奖杯</translation></message>
+</context>
+<context>
+<name>DialogView</name>
+<message><source>Remote Play Client</source><translation>远程游玩客户端</translation></message>
 </context>
 </TS>
