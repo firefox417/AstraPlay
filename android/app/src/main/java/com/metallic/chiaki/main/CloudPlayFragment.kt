@@ -427,7 +427,7 @@ class CloudPlayFragment : Fragment()
 		CloudCategory.STREAMABLE,
 		CloudCategory.PURCHASEABLE
 	)
-	private val tagFilterLabels = listOf(getString(R.string.cloud_owned), getString(R.string.cloud_streamable), getString(R.string.cloud_store))
+	private val tagFilterLabels by lazy { listOf(getString(R.string.cloud_owned), getString(R.string.cloud_streamable), getString(R.string.cloud_store)) }
 
 	private fun setupHeaderControls()
 	{
