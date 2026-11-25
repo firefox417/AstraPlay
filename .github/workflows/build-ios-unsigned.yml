@@ -99,7 +99,8 @@ jobs:
           test -d "$APP"
           mkdir -p unsigned-device/Payload
           ditto "$APP" unsigned-device/Payload/AstraPlay.app
-          (cd unsigned-device && /usr/bin/zip -qry "../AstraPlay-iOS-unsigned.ipa" Payload)
+          (cd unsigned-device && /usr/bin/zip -qry "../../AstraPlay-iOS-unsigned.ipa" Payload)
+          test -s "../AstraPlay-iOS-unsigned.ipa"
           ditto "$APP" "../AstraPlay-iOS-device-unsigned.app"
 
       - name: Build unsigned iOS Simulator app
