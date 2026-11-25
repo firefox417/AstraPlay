@@ -545,6 +545,17 @@ To continue anyway, go to Settings → Cloud and manually select a datacenter fo
 <message><source>Account-ID:</source><translation>账户 ID：</translation></message>
 <message><source>Auto-filled from PlayStation login</source><translation>从 PlayStation 登录信息自动填入</translation></message>
 <message><source>base64</source><translation>Base64 编码</translation></message>
+<message><source>Lookup</source><translation>查询</translation></message>
+<message><source>Look up a different Account ID by username</source><translation>通过用户名查询其他账户 ID</translation></message>
+<message><source>Online-ID:</source><translation>在线 ID：</translation></message>
+<message><source>username, case-sensitive</source><translation>用户名，区分大小写</translation></message>
+<message><source>Console Pin [Optional]</source><translation>主机 PIN 码［可选］</translation></message>
+<message><source>Console:</source><translation>主机：</translation></message>
+<message><source>PS4 Firmware &lt; 7.0</source><translation>PS4 固件版本 &lt; 7.0</translation></message>
+<message><source>PS4 Firmware &gt;= 7.0, &lt; 8.0</source><translation>PS4 固件版本 ≥ 7.0 且 &lt; 8.0</translation></message>
+<message><source>PS4 Firmware &gt;= 8.0</source><translation>PS4 固件版本 ≥ 8.0</translation></message>
+<message><source>PS5</source><translation>PS5</translation></message>
+<message><source>Your PlayStation Account ID is already auto-filled (%1).\n\nDo you want to log in with a different account?</source><translation>已自动填入你的 PlayStation 账户 ID（%1）。\n\n是否要使用其他账户登录？</translation></message>
 </context>
 <context>
 <name>ManualHostDialog</name>
@@ -915,5 +926,57 @@ To continue anyway, go to Settings → Cloud and manually select a datacenter fo
 <message><source>Contrast Recovery:</source><translation>对比度恢复：</translation></message>
 <message><source>Contrast Smoothness:</source><translation>对比度平滑度：</translation></message>
 <message><source>(3.5)</source><translation>（3.5）</translation></message>
+</context>
+<context>
+<name>ConsoleSetupWalkthrough</name>
+<message><source>Console Setup Guide</source><translation>主机设置指南</translation></message>
+<message><source>Next</source><translation>下一步</translation></message>
+<message><source>Done</source><translation>完成</translation></message>
+<message><source>Enable Remote Play</source><translation>启用远程游玩</translation></message>
+<message><source>Same WiFi Network</source><translation>连接到同一 Wi-Fi 网络</translation></message>
+<message><source>Add Manually</source><translation>手动添加</translation></message>
+<message><source>Register Console</source><translation>注册主机</translation></message>
+<message><source>Controls</source><translation>控制</translation></message>
+<message><source>Step 1: Enable Remote Play on Your Console</source><translation>步骤 1：在主机上启用远程游玩</translation></message>
+<message><source>Navigate to your console's Remote Play settings:</source><translation>前往主机的远程游玩设置：</translation></message>
+<message><source>PS5: Settings → System → Remote Play</source><translation>PS5：设置 → 系统 → 远程游玩</translation></message>
+<message><source>PS4: Settings → Remote Play Connection Settings</source><translation>PS4：设置 → 远程游玩连接设定</translation></message>
+<message><source>✓ Enable Remote Play and make sure your console is connected to the internet</source><translation>✓ 启用远程游玩，并确保主机已连接互联网</translation></message>
+<message><source>Step 2: Connect to the Same WiFi Network</source><translation>步骤 2：连接到同一 Wi-Fi 网络</translation></message>
+<message><source>⚠️ Important: Discovery &amp; Registration Requirement</source><translation>⚠️ 重要：发现和注册要求</translation></message>
+<message><source>To register your console with AstraPlay, both your device and console must be connected to the same WiFi network. This is required even if you plan to use remote play away from home later.</source><translation>要在 AstraPlay 中注册主机，你的设备和主机必须连接到同一个 Wi-Fi 网络。即使以后打算在外网远程游玩，此步骤也不可省略。</translation></message>
+<message><source>✓ Make sure both devices are on the same network, then AstraPlay should automatically discover your console.</source><translation>✓ 请确认两台设备连接到同一网络，AstraPlay 随后应能自动发现主机。</translation></message>
+<message><source>Step 3: Add Console Manually (If Needed)</source><translation>步骤 3：手动添加主机（如有需要）</translation></message>
+<message><source>If your console doesn't appear automatically:</source><translation>如果没有自动发现主机：</translation></message>
+<message><source>You can add your console manually using its IP address. Find your console's IP in its network settings, then use the 'Add Console Manually' button from the main screen.</source><translation>你可以使用主机 IP 地址手动添加主机。在主机的网络设置中查找 IP，然后点击主屏幕上的“手动添加主机”。</translation></message>
+<message><source>💡 Note: You should only need to do this if automatic discovery isn't working on your network.</source><translation>💡 提示：仅当网络中的自动发现功能无法正常工作时，才需要手动添加。</translation></message>
+<message><source>Step 4: Register Your Console</source><translation>步骤 4：注册主机</translation></message>
+<message><source>Once your console appears, click on it to register</source><translation>主机出现后，点击它即可注册</translation></message>
+<message><source>✅ Recommended: Login (Automatic)</source><translation>✅ 推荐：登录（自动注册）</translation></message>
+<message><source>Login from the main menu, then click your console for automatic registration.</source><translation>从主菜单登录，然后点击主机即可自动注册。</translation></message>
+<message><source>No PIN or Account ID needed!</source><translation>无需 PIN 码或账户 ID！</translation></message>
+<message><source>Alternative: Manual Registration</source><translation>其他方式：手动注册</translation></message>
+<message><source>Click your console, enter the PIN from your console screen, and use 'Public Lookup' to find your Account ID.</source><translation>点击主机，输入主机屏幕上显示的 PIN 码，然后使用“公开查询”查找账户 ID。</translation></message>
+<message><source>💡 After registration, login enables remote play from anywhere without port forwarding.</source><translation>💡 注册后登录，即可从任何地方远程游玩，无需设置端口转发。</translation></message>
+<message><source>📱 Open Stream Menu</source><translation>📱 打开串流菜单</translation></message>
+<message><source>L1+R1+L3+R3</source><translation>L1+R1+L3+R3</translation></message>
+<message><source>🎯 Back Paddle Buttons</source><translation>🎯 背部拨片按键</translation></message>
+<message><source>L4: Mute</source><translation>L4：静音</translation></message>
+<message><source>L5: End</source><translation>L5：结束</translation></message>
+<message><source>R4: Zoom</source><translation>R4：缩放</translation></message>
+<message><source>R5: Stretch</source><translation>R5：拉伸</translation></message>
+<message><source>🎮 PS Button</source><translation>🎮 PS 键</translation></message>
+<message><source>Down on Left Trackpad</source><translation>按下左侧触摸板</translation></message>
+<message><source>Exit</source><translation>退出</translation></message>
+<message><source>Previous</source><translation>上一步</translation></message>
+<message><source>Use ← → arrow keys or swipe to navigate</source><translation>使用 ← → 方向键或滑动切换页面</translation></message>
+</context>
+<context>
+<name>GameCard</name>
+<message><source>Unknown Game</source><translation>未知游戏</translation></message>
+<message><source>%1% Trophies</source><translation>%1% 奖杯</translation></message>
+<message><source>Launch Game</source><translation>启动游戏</translation></message>
+<message><source>Shortcut</source><translation>快捷方式</translation></message>
+<message><source>Trophies</source><translation>奖杯</translation></message>
 </context>
 </TS>
