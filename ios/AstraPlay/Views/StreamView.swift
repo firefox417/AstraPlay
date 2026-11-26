@@ -8,18 +8,26 @@ import os.log
 private let streamViewLog = OSLog(subsystem: "com.astraplay.stream", category: "StreamView")
 
 private func chiakiQuitReasonDescription(_ reason: Int32) -> String {
+    // ChiakiQuitReason is a sequential C enum (see lib/include/chiaki/session.h).
+    // Do not use the old 0x01xxxxxx constants here: the bridge passes the enum value directly.
     switch reason {
-    case 0: return NSLocalizedString("Stream stopped normally.", comment: "Stream end reason")
-    case 1: return NSLocalizedString("Stopped.", comment: "Stream end reason")
-    case 0x01000001: return NSLocalizedString("Session request failed (unknown reason).", comment: "Stream end reason")
-    case 0x01000002: return NSLocalizedString("Connection refused by console. It may be in use or not ready.", comment: "Stream end reason")
-    case 0x01000003: return NSLocalizedString("Streaming is already in use on the console.", comment: "Stream end reason")
-    case 0x01000004: return NSLocalizedString("The console ended streaming unexpectedly. Please wait and try again.", comment: "Stream end reason")
-    case 0x02000001: return NSLocalizedString("Control connection failed (unknown).", comment: "Stream end reason")
-    case 0x02000002: return NSLocalizedString("Control connection refused. Check network settings.", comment: "Stream end reason")
-    case 0x04000001: return NSLocalizedString("Stream connection timed out.", comment: "Stream end reason")
+    case 0: return NSLocalizedString("Unknown session state.", comment: "Stream end reason")
+    case 1: return NSLocalizedString("Stream stopped.", comment: "Stream end reason")
+    case 2: return NSLocalizedString("Session request failed. Check that the PS5 is awake, Remote Play is enabled, and the console is reachable on the network.", comment: "Stream end reason")
+    case 3: return NSLocalizedString("The PS5 refused the Remote Play session. It may already be in use or not ready.", comment: "Stream end reason")
+    case 4: return NSLocalizedString("Remote Play is already in use on the PS5.", comment: "Stream end reason")
+    case 5: return NSLocalizedString("Remote Play on the PS5 stopped unexpectedly.", comment: "Stream end reason")
+    case 6: return NSLocalizedString("The Remote Play protocol version does not match the PS5.", comment: "Stream end reason")
+    case 7: return NSLocalizedString("Unknown control connection error.", comment: "Stream end reason")
+    case 8: return NSLocalizedString("Could not establish the control connection.", comment: "Stream end reason")
+    case 9: return NSLocalizedString("The PS5 refused the control connection. Check the network.", comment: "Stream end reason")
+    case 10: return NSLocalizedString("Unknown streaming connection error.", comment: "Stream end reason")
+    case 11: return NSLocalizedString("The PS5 disconnected the streaming connection.", comment: "Stream end reason")
+    case 12: return NSLocalizedString("The PS5 shut down the streaming connection.", comment: "Stream end reason")
+    case 13: return NSLocalizedString("The streaming connection timed out. Check network stability.", comment: "Stream end reason")
+    case 14: return NSLocalizedString("PSN console registration failed.", comment: "Stream end reason")
     default:
-        return String(format: NSLocalizedString("Stream ended (code: 0x%08x).", comment: "Stream end reason"), UInt32(bitPattern: reason))
+        return NSLocalizedString("Unknown stream error.", comment: "Stream end reason")
     }
 }
 
@@ -391,7 +399,7 @@ struct StreamView: View {
         } message: {
             if case .quit(let reason, let reasonStr) = session.state {
                 let msg = reasonStr ?? chiakiQuitReasonDescription(reason)
-                Text(msg)
+                Text(String(format: "%@ (code: 0x%08X)", msg, UInt32(bitPattern: reason)))
             } else {
                 Text("The stream has ended.")
             }
